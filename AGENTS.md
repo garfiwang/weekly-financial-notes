@@ -7,8 +7,9 @@
 | 層級 | 平台 | 狀態 / 位置 |
 |------|------|------------|
 | L1 本地 | 專案資料夾 (GDrive) | `/Users/garfiwang/Library/CloudStorage/GoogleDrive-richnews168@gmail.com/我的雲端硬碟/【筆記】每週財經資訊` |
-| L2 GitHub | 私有儲存庫 | `https://github.com/garfiwang/weekly-financial-notes` |
+| L2 GitHub | 公開儲存庫 | `https://github.com/garfiwang/weekly-financial-notes` |
 | L3 Obsidian | 第二大腦 Vault | `/Users/garfiwang/Documents/Obsidian/【筆記】每週財經資訊` |
+| L4 Pages | 簡報公開網頁 | `https://garfiwang.github.io/weekly-financial-notes/` |
 
 ## 專案目標與排程
 - **核心目標**：定期彙整每週財經筆記，保持版本控制與 Obsidian 雙向/單向同步。
@@ -19,6 +20,7 @@
 【筆記】每週財經資訊/
 ├── AGENTS.md
 ├── handoff.md
+├── index.html
 ├── .gitignore
 └── 20260824-0828 | 美債殖利率飆升深度分析.gdoc
 ```
