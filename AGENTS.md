@@ -26,7 +26,7 @@
 ```
 
 ## 專案專用技能
-- **每週財經網頁簡報製作** (`weekly-financial-notes-slide`)：使用手機優先（Mobile-First）大字版 Swiper.js 架構，將每週財經筆記轉為 7 頁白話互動簡報，支援上下順暢滾動與左右翻頁，並自動部署至 GitHub Pages。
+- **每週財經網頁簡報製作** (`weekly-financial-notes-slide`)：觸發詞包含「製作這週的財經簡報」、「製作這週的財經報告」、「更新每週財經資訊」等。使用手機優先（Mobile-First）大字版 Swiper.js 架構，將每週財經筆記轉為 7 頁白話互動簡報，支援上下順暢滾動與左右翻頁，並自動部署至 GitHub Pages。
 
 ## 開工 / 收工 SOP
 - **開工（startup）**：讀取 `AGENTS.md` 與 `handoff.md` 確認最新進度。
