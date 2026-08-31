@@ -25,6 +25,10 @@
 └── 20260824-0828 | 美債殖利率飆升深度分析.gdoc
 ```
 
+## 專案專用技能
+- **每週財經網頁簡報製作** (`weekly-financial-notes-slide`)：使用手機優先（Mobile-First）大字版 Swiper.js 架構，將每週財經筆記轉為 7 頁白話互動簡報，支援上下順暢滾動與左右翻頁，並自動部署至 GitHub Pages。
+
 ## 開工 / 收工 SOP
 - **開工（startup）**：讀取 `AGENTS.md` 與 `handoff.md` 確認最新進度。
+- **更新簡報（weekly-financial-notes-slide）**：載入每週最新財經筆記，依規範產生 `index.html` 並發布至 Pages。
 - **收工（shutdown）**：更新 `handoff.md`，進行 Git commit/push 並同步備份至 Obsidian。
