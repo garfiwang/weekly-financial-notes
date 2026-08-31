@@ -2,10 +2,13 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>2026年8月全球財經重點摘要 | 美債殖利率飆升深度解析</title>
   
-  <!-- Swiper.js CSS (頂級手機滑動體驗) -->
+  <!-- Swiper.js CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   
   <!-- Tailwind CSS -->
@@ -14,7 +17,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -27,9 +30,10 @@
       height: 100dvh;
       margin: 0;
       padding: 0;
-      background-color: #070a12;
-      color: #f1f5f9;
+      background-color: #070a14;
+      color: #f8fafc;
       font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 18px; /* 基礎字體加大至 18px，極度清晰 */
       overflow: hidden;
     }
     .swiper {
@@ -43,21 +47,21 @@
       height: 100%;
       height: 100dvh;
       overflow: hidden;
-      background: radial-gradient(circle at 50% 10%, #151f38 0%, #070a12 80%);
+      background: radial-gradient(circle at 50% 15%, #18233f 0%, #070a14 85%);
     }
+    /* 內頁平滑上下捲動容器 */
     .slide-scroll-content {
       flex: 1;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      padding: 1rem 1.25rem 5rem 1.25rem;
+      padding: 1.25rem 1.25rem 6rem 1.25rem;
     }
-    /* 自訂捲軸樣式 */
     .slide-scroll-content::-webkit-scrollbar {
-      width: 4px;
+      width: 5px;
     }
     .slide-scroll-content::-webkit-scrollbar-thumb {
-      background: rgba(245, 158, 11, 0.3);
-      border-radius: 4px;
+      background: rgba(245, 158, 11, 0.4);
+      border-radius: 6px;
     }
     .gold-gradient-text {
       background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
@@ -65,69 +69,68 @@
       -webkit-text-fill-color: transparent;
     }
     .card-glass {
-      background: rgba(22, 33, 56, 0.75);
+      background: rgba(26, 38, 64, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 1rem;
     }
     .stat-card {
-      background: linear-gradient(145deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 0.875rem;
+      background: linear-gradient(145deg, rgba(30, 45, 72, 0.9) 0%, rgba(15, 23, 42, 0.98) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 1rem;
     }
-    /* Swiper 分頁圓點 */
     .swiper-pagination-bullet {
-      background: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.35);
       opacity: 1;
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       transition: all 0.3s ease;
     }
     .swiper-pagination-bullet-active {
       background: #f59e0b !important;
-      width: 18px;
-      border-radius: 4px;
+      width: 22px;
+      border-radius: 6px;
     }
   </style>
 </head>
 <body>
 
-  <!-- 頂部進度列與標題 -->
-  <header class="fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-4 py-2.5 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
+  <!-- 頂部進度列 -->
+  <header class="fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-4 py-3 bg-slate-950/90 backdrop-blur-md border-b border-white/10">
     <div class="flex items-center space-x-2">
-      <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-      <span class="text-xs font-bold text-slate-300 tracking-wider">每週財經快報</span>
+      <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+      <span class="text-sm font-bold text-slate-200 tracking-wider">每週財經重點快報</span>
     </div>
-    <div id="page-indicator" class="text-xs font-mono font-bold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
+    <div id="page-indicator" class="text-sm font-mono font-bold text-amber-300 bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/30">
       1 / 7
     </div>
   </header>
 
   <!-- 主滑動容器 -->
-  <div class="swiper mySwiper pt-10">
+  <div class="swiper mySwiper pt-12">
     <div class="swiper-wrapper">
 
       <!-- ================= Slide 1: 封面 ================= -->
       <div class="swiper-slide">
         <div class="slide-scroll-content flex flex-col justify-center min-h-full">
-          <div class="inline-flex items-center px-3 py-1 mb-4 text-xs font-bold text-amber-300 bg-amber-500/20 border border-amber-500/30 rounded-full w-fit">
+          <div class="inline-flex items-center px-3.5 py-1.5 mb-5 text-sm font-bold text-amber-300 bg-amber-500/20 border border-amber-500/30 rounded-full w-fit">
             📅 2026.08.24 - 08.28
           </div>
-          <h1 class="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
+          <h1 class="text-3xl sm:text-4xl font-black text-white leading-tight mb-4">
             美債殖利率飆升<br>
             <span class="gold-gradient-text">全球財經重點摘要</span>
           </h1>
-          <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
-            美國 30 年期國債殖利率衝上 5.34% 創金融海嘯以來新高！用一般人都能懂的白話，帶你看清全球借錢變貴後的財富變化與應對策略。
+          <p class="text-lg text-slate-200 leading-relaxed mb-6">
+            美國 30 年國債殖利率衝上 <strong>5.34%</strong> 創歷史新高！用最白話的重點，帶你看懂錢變貴後的財富變化與應對策略。
           </p>
           
           <div class="card-glass p-4 border-l-4 border-amber-400 mb-4">
             <div class="flex items-center space-x-3 text-amber-200">
-              <span class="text-xl">👉</span>
-              <div class="text-xs sm:text-sm font-medium">
+              <span class="text-2xl">👉</span>
+              <div class="text-base font-semibold">
                 <strong>向左滑動</strong> 進入重點解析<br>
-                <span class="text-slate-400 text-xs">（若頁面字數較多可直接上下滑動閱讀）</span>
+                <span class="text-slate-300 text-sm font-normal">（每一頁都可隨意上下滑動閱讀）</span>
               </div>
             </div>
           </div>
@@ -137,41 +140,41 @@
       <!-- ================= Slide 2: 一句話看懂 ================= -->
       <div class="swiper-slide">
         <div class="slide-scroll-content">
-          <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">總覽觀點</div>
-          <h2 class="text-xl sm:text-2xl font-black text-white mb-3">💡 一句話看懂發生什麼事？</h2>
+          <div class="text-sm font-bold text-amber-400 tracking-wider uppercase mb-1">核心總覽</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mb-4">💡 一句話看懂發生什麼事？</h2>
           
-          <div class="card-glass p-4 mb-4 border-l-4 border-amber-500">
-            <div class="text-lg sm:text-xl font-black text-white mb-2 leading-snug">
+          <div class="card-glass p-5 mb-5 border-l-4 border-amber-500">
+            <div class="text-xl sm:text-2xl font-black text-amber-300 mb-2 leading-snug">
               「全世界借錢的成本變貴了！」
             </div>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed m-0">
-              當全世界最安全的美國國債利息衝上 5.34%，全球熱錢開始重新算帳，股票、房產、匯率通通面臨重新定價。
+            <p class="text-base sm:text-lg text-slate-100 leading-relaxed m-0">
+              全世界最安全的美國國債利息衝上 5.34%，熱錢開始抽離高風險資產，股票、房產、匯率通通面臨重新洗牌！
             </p>
           </div>
 
-          <div class="space-y-2.5">
-            <div class="stat-card p-3.5 flex items-center justify-between border-l-4 border-amber-400">
+          <div class="space-y-3">
+            <div class="stat-card p-4 flex items-center justify-between border-l-4 border-amber-400">
               <div>
-                <div class="text-xs text-slate-400">美債 30 年期殖利率</div>
-                <div class="text-xs text-amber-300 font-medium">創 2007 年海嘯以來新高</div>
+                <div class="text-sm text-slate-300">美債 30 年殖利率</div>
+                <div class="text-sm text-amber-300 font-bold">創 2007 年海嘯以來新高</div>
               </div>
-              <div class="text-2xl sm:text-3xl font-black text-amber-400">5.34%</div>
+              <div class="text-3xl sm:text-4xl font-black text-amber-400">5.34%</div>
             </div>
 
-            <div class="stat-card p-3.5 flex items-center justify-between border-l-4 border-sky-400">
+            <div class="stat-card p-4 flex items-center justify-between border-l-4 border-sky-400">
               <div>
-                <div class="text-xs text-slate-400">美國聯邦總債務</div>
-                <div class="text-xs text-sky-300 font-medium">每年光付利息就要 $1 兆</div>
+                <div class="text-sm text-slate-300">美國聯邦總債務</div>
+                <div class="text-sm text-sky-300 font-bold">每年光付利息就要 $1 兆</div>
               </div>
-              <div class="text-2xl sm:text-3xl font-black text-sky-400">$40 兆</div>
+              <div class="text-3xl sm:text-4xl font-black text-sky-400">$40 兆</div>
             </div>
 
-            <div class="stat-card p-3.5 flex items-center justify-between border-l-4 border-purple-400">
+            <div class="stat-card p-4 flex items-center justify-between border-l-4 border-purple-400">
               <div>
-                <div class="text-xs text-slate-400">黃金突破新高</div>
-                <div class="text-xs text-purple-300 font-medium">資金逃離法幣尋求避險</div>
+                <div class="text-sm text-slate-300">黃金突破歷史新高</div>
+                <div class="text-sm text-purple-300 font-bold">全球熱錢湧入避險</div>
               </div>
-              <div class="text-2xl sm:text-3xl font-black text-purple-300">$4,600</div>
+              <div class="text-3xl sm:text-4xl font-black text-purple-300">$4,600</div>
             </div>
           </div>
         </div>
@@ -180,30 +183,28 @@
       <!-- ================= Slide 3: 原因一 通膨 ================= -->
       <div class="swiper-slide">
         <div class="slide-scroll-content">
-          <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">飆升主因 01</div>
-          <h2 class="text-xl sm:text-2xl font-black text-white mb-3">中東衝突加劇，通膨壓不住</h2>
+          <div class="text-sm font-bold text-amber-400 tracking-wider uppercase mb-1">飆升主因 01</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mb-4">中東衝突加劇，通膨降不下</h2>
           
-          <div class="space-y-3">
-            <div class="card-glass p-4">
-              <h3 class="text-base font-bold text-amber-300 mb-1.5 flex items-center">
-                <span>🔥 油價與柴油成本雙飆</span>
-              </h3>
-              <p class="text-xs sm:text-sm text-slate-200 leading-relaxed mb-3">
-                中東局勢僵持推升原油重返 $90 美元，柴油價格升至 $5.47/加侖，直接墊高了全美貨運與物流開銷。
+          <div class="space-y-4">
+            <div class="card-glass p-5">
+              <h3 class="text-lg sm:text-xl font-bold text-amber-300 mb-2">🔥 油價與柴油成本雙飆</h3>
+              <p class="text-base text-slate-200 leading-relaxed mb-3">
+                中東局勢僵持推升原油重返 $90 美元、柴油飆至 $5.47/加侖，直接墊高全美貨運與物流開銷。
               </p>
               
-              <div class="bg-amber-500/15 border border-amber-500/30 p-3 rounded-lg">
-                <div class="text-xs font-bold text-amber-300 mb-0.5">⚠️ 最強殺招：化肥原料暴漲</div>
-                <div class="text-xs text-slate-300">
-                  作為化工與肥料核心原料的<strong>硫磺價格狂飆 145%</strong>，讓民生糧食與農業成本短期內降不下來。
+              <div class="bg-amber-500/20 border border-amber-500/40 p-3.5 rounded-xl">
+                <div class="text-sm font-bold text-amber-200 mb-1">⚠️ 關鍵殺招：化肥原料大漲</div>
+                <div class="text-base text-slate-100 font-medium">
+                  化工與肥料關鍵原料<strong>「硫磺價格暴漲 145%」</strong>，讓民生糧食與農業成本短期內根本降不下來。
                 </div>
               </div>
             </div>
 
-            <div class="card-glass p-4">
-              <h3 class="text-base font-bold text-sky-300 mb-1.5">🛡️ 降息空間被堵死</h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed m-0">
-                成本推升型通膨讓聯準會無法輕易降息，市場預期高利率將維持很久，債券引發拋售潮。
+            <div class="card-glass p-5">
+              <h3 class="text-lg sm:text-xl font-bold text-sky-300 mb-2">🛡️ 降息空間被徹底堵死</h3>
+              <p class="text-base text-slate-200 leading-relaxed m-0">
+                成本推升型通膨讓聯準會不敢輕易降息，市場預期高利率將維持很久，引爆長期公債拋售潮。
               </p>
             </div>
           </div>
@@ -213,37 +214,37 @@
       <!-- ================= Slide 4: 原因二 AI搶錢 ================= -->
       <div class="swiper-slide">
         <div class="slide-scroll-content">
-          <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">飆升主因 02</div>
-          <h2 class="text-xl sm:text-2xl font-black text-white mb-3">AI 巨頭搶錢與隱形負債</h2>
+          <div class="text-sm font-bold text-amber-400 tracking-wider uppercase mb-1">飆升主因 02</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mb-4">AI 巨頭搶錢與隱形負債</h2>
           
-          <div class="space-y-3">
-            <div class="card-glass p-3.5">
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="text-sm sm:text-base font-bold text-white">科技巨頭跟政府搶錢</h3>
-                <span class="bg-amber-500/20 text-amber-300 text-xs px-2 py-0.5 rounded font-bold">7-8% 高息</span>
+          <div class="space-y-3.5">
+            <div class="card-glass p-4">
+              <div class="flex items-center justify-between mb-1.5">
+                <h3 class="text-base sm:text-lg font-bold text-white">科技巨頭跟政府搶錢</h3>
+                <span class="bg-amber-500/20 text-amber-300 text-xs px-2.5 py-1 rounded-full font-bold">7-8% 高息債</span>
               </div>
-              <p class="text-xs text-slate-300 m-0">
-                Google、微軟為了蓋算力中心大量發行高利公司債，搶走原本流向美國國債的資金。
+              <p class="text-base text-slate-200 m-0 leading-relaxed">
+                Google、微軟為了蓋龐大算力中心大量發行高利公司債，搶走原本要買國債的資金。
               </p>
             </div>
 
-            <div class="card-glass p-3.5">
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="text-sm sm:text-base font-bold text-white">1.09 兆表外隱形負債</h3>
-                <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-0.5 rounded font-bold">$1.09 兆</span>
+            <div class="card-glass p-4">
+              <div class="flex items-center justify-between mb-1.5">
+                <h3 class="text-base sm:text-lg font-bold text-white">1.09 兆表外隱形負債</h3>
+                <span class="bg-purple-500/20 text-purple-300 text-xs px-2.5 py-1 rounded-full font-bold">$1.09 兆美元</span>
               </div>
-              <p class="text-xs text-slate-300 m-0">
-                巨頭透過特殊目的公司（SPV）掛載龐大表外承諾，鎖定了市場未來數年的巨額流動性。
+              <p class="text-base text-slate-200 m-0 leading-relaxed">
+                科技巨頭透過特殊目的公司（SPV）運作巨額表外承諾，鎖定了市場未來數年的流動性。
               </p>
             </div>
 
-            <div class="card-glass p-3.5">
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="text-sm sm:text-base font-bold text-white">Nvidia 信用擔保循環</h3>
-                <span class="bg-sky-500/20 text-sky-300 text-xs px-2 py-0.5 rounded font-bold">+90 bps</span>
+            <div class="card-glass p-4">
+              <div class="flex items-center justify-between mb-1.5">
+                <h3 class="text-base sm:text-lg font-bold text-white">Nvidia 信用擔保循環</h3>
+                <span class="bg-sky-500/20 text-sky-300 text-xs px-2.5 py-1 rounded-full font-bold">+90 bps 溢價</span>
               </div>
-              <p class="text-xs text-slate-300 m-0">
-                提供 $1,050 億美元信用擔保給客戶買自家晶片，推升了債券市場的期限溢價。
+              <p class="text-base text-slate-200 m-0 leading-relaxed">
+                提供 $1,050 億美元信用擔保給客戶買自家晶片，大幅推升債市的風險溢價。
               </p>
             </div>
           </div>
@@ -253,34 +254,34 @@
       <!-- ================= Slide 5: 原因三 財政失控 ================= -->
       <div class="swiper-slide">
         <div class="slide-scroll-content">
-          <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">飆升主因 03</div>
-          <h2 class="text-xl sm:text-2xl font-black text-white mb-3">美國財政失控：年利息破 1 兆</h2>
+          <div class="text-sm font-bold text-amber-400 tracking-wider uppercase mb-1">飆升主因 03</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mb-4">美國財政失控：年利息破 1 兆</h2>
           
-          <div class="card-glass p-4 mb-3">
-            <div class="grid grid-cols-2 gap-3 text-center border-b border-white/10 pb-3 mb-3">
+          <div class="card-glass p-5 mb-4">
+            <div class="grid grid-cols-2 gap-4 text-center border-b border-white/10 pb-4 mb-4">
               <div>
-                <div class="text-xs text-slate-400 mb-0.5">美聯邦總債務</div>
-                <div class="text-2xl sm:text-3xl font-black text-rose-400">$40 兆</div>
+                <div class="text-sm text-slate-300 mb-1">美聯邦總債務</div>
+                <div class="text-3xl sm:text-4xl font-black text-rose-400">$40 兆</div>
               </div>
               <div>
-                <div class="text-xs text-slate-400 mb-0.5">每年淨利息支出</div>
-                <div class="text-2xl sm:text-3xl font-black text-amber-400">$1 兆</div>
+                <div class="text-sm text-slate-300 mb-1">每年淨利息支出</div>
+                <div class="text-3xl sm:text-4xl font-black text-amber-400">$1 兆</div>
               </div>
             </div>
             
-            <div class="space-y-2 text-xs sm:text-sm text-slate-200 leading-relaxed">
+            <div class="space-y-3 text-base text-slate-100 leading-relaxed">
               <p class="m-0">
-                🚨 <strong>利息支出已超越國防預算（約 8 千億）</strong>！
+                🚨 <strong>光每年付的利息，就已經超過整年國防預算（約 8 千億美元）！</strong>
               </p>
-              <p class="text-slate-300 m-0">
-                當美國政府陷入「發高息新債來還舊債」的惡性循環，市場開始擔心政府還錢能力，要求更高的殖利率補償。
+              <p class="text-slate-200 m-0">
+                當美國政府陷入「發高息新債來還舊債」的惡性循環，市場對美債避風港的信任開始鬆動。
               </p>
             </div>
           </div>
 
-          <div class="stat-card p-3 border-l-4 border-rose-400">
-            <div class="text-xs text-slate-300">
-              📌 <strong>核心結論</strong>：美債「無風險避風港」的絕對神話已開始鬆動。
+          <div class="stat-card p-4 border-l-4 border-rose-400">
+            <div class="text-base text-slate-100">
+              📌 <strong>核心結論</strong>：美債「無風險避風港」的神話正在面臨嚴肅考驗。
             </div>
           </div>
         </div>
@@ -289,43 +290,35 @@
       <!-- ================= Slide 6: 全球連鎖影響 ================= -->
       <div class="swiper-slide">
         <div class="slide-scroll-content">
-          <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">市場觀察</div>
-          <h2 class="text-xl sm:text-2xl font-black text-white mb-3">🌐 全球四大連鎖效應</h2>
+          <div class="text-sm font-bold text-amber-400 tracking-wider uppercase mb-1">市場觀察</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mb-4">🌐 全球四大連鎖效應</h2>
           
-          <div class="space-y-2.5 text-xs sm:text-sm">
-            <div class="card-glass p-3">
-              <div class="text-amber-400 font-bold mb-0.5 flex items-center space-x-1">
-                <span>📈 美股高估值面臨修正</span>
-              </div>
-              <p class="text-slate-300 m-0 leading-relaxed">
-                買無風險美債就能穩領 5%+，高估值、沒實質獲利的科技股面臨資金抽離修正。
+          <div class="space-y-3 text-base">
+            <div class="card-glass p-4">
+              <div class="text-amber-300 font-bold text-lg mb-1">📈 美股高估值面臨修正</div>
+              <p class="text-slate-200 m-0 leading-relaxed">
+                買無風險美債就能穩領 5%+ 回報，資金從本益比過高的股票流出進行估值回調。
               </p>
             </div>
 
-            <div class="card-glass p-3">
-              <div class="text-sky-400 font-bold mb-0.5 flex items-center space-x-1">
-                <span>💴 日本人才「賺外幣」現象</span>
-              </div>
-              <p class="text-slate-300 m-0 leading-relaxed">
-                日圓持續貶值，大量日本專業人才轉向海外接單「賺美元、回國花」，本土產業面臨空洞化。
+            <div class="card-glass p-4">
+              <div class="text-sky-300 font-bold text-lg mb-1">💴 日本人才「賺外幣」現象</div>
+              <p class="text-slate-200 m-0 leading-relaxed">
+                日圓貶值侵蝕購買力，大量日本專業人才轉向海外接單「賺美元、回國花」。
               </p>
             </div>
 
-            <div class="card-glass p-3">
-              <div class="text-purple-300 font-bold mb-0.5 flex items-center space-x-1">
-                <span>🏆 黃金與比特幣大飆升</span>
-              </div>
-              <p class="text-slate-300 m-0 leading-relaxed">
-                黃金突破 <strong>$4,600</strong>、比特幣破 <strong>$7.8萬</strong>，反映大眾對法幣購買力流失的避險逃難。
+            <div class="card-glass p-4">
+              <div class="text-purple-300 font-bold text-lg mb-1">🏆 黃金與比特幣大飆升</div>
+              <p class="text-slate-200 m-0 leading-relaxed">
+                黃金衝上 <strong>$4,600</strong>、比特幣破 <strong>$7.8萬</strong>，大眾逃離法幣尋求保值。
               </p>
             </div>
 
-            <div class="card-glass p-3">
-              <div class="text-emerald-400 font-bold mb-0.5 flex items-center space-x-1">
-                <span>🤖 白宮逼 35 國 AI 選邊站</span>
-              </div>
-              <p class="text-slate-300 m-0 leading-relaxed">
-                要求盟國在美中 AI 體系二選一，影響半導體與算力供應鏈佈局。
+            <div class="card-glass p-4">
+              <div class="text-emerald-300 font-bold text-lg mb-1">🤖 35 國 AI 選邊站難題</div>
+              <p class="text-slate-200 m-0 leading-relaxed">
+                白宮要求盟國在美中 AI 陣營二選一，影響未來半導體與算力供應鏈格局。
               </p>
             </div>
           </div>
@@ -335,34 +328,34 @@
       <!-- ================= Slide 7: 投資行動建議 ================= -->
       <div class="swiper-slide">
         <div class="slide-scroll-content">
-          <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">實用策略</div>
-          <h2 class="text-xl sm:text-2xl font-black text-white mb-3">🛡️ 一般人的 3 大戰術建議</h2>
+          <div class="text-sm font-bold text-amber-400 tracking-wider uppercase mb-1">實用策略</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mb-4">🛡️ 一般人的 3 大戰術建議</h2>
           
-          <div class="space-y-3">
-            <div class="card-glass p-3.5 border-l-4 border-emerald-400">
-              <h3 class="text-sm sm:text-base font-bold text-emerald-300 mb-1">
+          <div class="space-y-4">
+            <div class="card-glass p-4 border-l-4 border-emerald-400">
+              <h3 class="text-lg sm:text-xl font-bold text-emerald-300 mb-1.5">
                 1. 保留部分現金流動性
               </h3>
-              <p class="text-xs sm:text-sm text-slate-300 m-0 leading-relaxed">
-                市場技術面仍在震盪尋底，手握充裕現金，才能在市場回測時具備逢低主動佈局的彈性。
+              <p class="text-base text-slate-200 m-0 leading-relaxed">
+                股市技術面仍在尋找底部，保持充裕現金，才能在市場震盪回測時擁有逢低佈局的底氣。
               </p>
             </div>
 
-            <div class="card-glass p-3.5 border-l-4 border-amber-400">
-              <h3 class="text-sm sm:text-base font-bold text-amber-300 mb-1">
+            <div class="card-glass p-4 border-l-4 border-amber-400">
+              <h3 class="text-lg sm:text-xl font-bold text-amber-300 mb-1.5">
                 2. 鎖定有實質獲利的科技龍頭
               </h3>
-              <p class="text-xs sm:text-sm text-slate-300 m-0 leading-relaxed">
-                避開純靠想像力炒作的夢想股，逢低分批佈局有真實強勁現金流與高護城河的 AI 基礎設施龍頭。
+              <p class="text-base text-slate-200 m-0 leading-relaxed">
+                避開純靠想像力炒作的夢想股，拉回時分批佈局具備龐大真實獲利與高護城河的 AI 龍頭。
               </p>
             </div>
 
-            <div class="card-glass p-3.5 border-l-4 border-sky-400">
-              <h3 class="text-sm sm:text-base font-bold text-sky-300 mb-1">
-                3. 配置防禦與避險資產
+            <div class="card-glass p-4 border-l-4 border-sky-400">
+              <h3 class="text-lg sm:text-xl font-bold text-sky-300 mb-1.5">
+                3. 配置防禦避險資產
               </h3>
-              <p class="text-xs sm:text-sm text-slate-300 m-0 leading-relaxed">
-                適度持有黃金、比特幣或通膨受惠股（能源、肥料原料），有效對沖法幣長期購買力受侵蝕的風險。
+              <p class="text-base text-slate-200 m-0 leading-relaxed">
+                適度持有黃金、比特幣或通膨受惠股（能源、化肥），有效對沖法幣購買力下降的風險。
               </p>
             </div>
           </div>
@@ -372,16 +365,16 @@
     </div>
 
     <!-- 底部圓點指示器 -->
-    <div class="swiper-pagination !bottom-12"></div>
+    <div class="swiper-pagination !bottom-14"></div>
   </div>
 
   <!-- 底部左右切換導航列 -->
-  <footer class="fixed bottom-0 left-0 right-0 z-30 flex items-center justify-between px-5 py-2.5 bg-slate-950/90 backdrop-blur-md border-t border-white/5">
-    <button id="btn-prev" class="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 active:bg-slate-700 text-xs font-semibold">
+  <footer class="fixed bottom-0 left-0 right-0 z-30 flex items-center justify-between px-5 py-3 bg-slate-950/95 backdrop-blur-md border-t border-white/10">
+    <button id="btn-prev" class="flex items-center space-x-1 px-4 py-2 rounded-xl bg-slate-800 text-slate-200 active:bg-slate-700 text-sm font-bold">
       <span>‹ 上一頁</span>
     </button>
-    <span class="text-[11px] text-slate-400 font-medium">左右滑動翻頁 • 可上下捲動</span>
-    <button id="btn-next" class="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 active:bg-amber-400 text-xs font-bold shadow-lg shadow-amber-500/20">
+    <span class="text-xs text-slate-300 font-medium">左右滑動 • 可上下滾動</span>
+    <button id="btn-next" class="flex items-center space-x-1 px-4 py-2 rounded-xl bg-amber-500 text-slate-950 active:bg-amber-400 text-sm font-black shadow-lg shadow-amber-500/25">
       <span>下一頁 ›</span>
     </button>
   </footer>
@@ -408,9 +401,8 @@
           const current = this.activeIndex + 1;
           document.getElementById('page-indicator').textContent = `${current} / ${total}`;
           
-          // 按鈕狀態微調
-          document.getElementById('btn-prev').style.opacity = current === 1 ? '0.4' : '1';
-          document.getElementById('btn-next').textContent = current === total ? '到頂端 ↺' : '下一頁 ›';
+          document.getElementById('btn-prev').style.opacity = current === 1 ? '0.3' : '1';
+          document.getElementById('btn-next').textContent = current === total ? '回到首頁 ↺' : '下一頁 ›';
         }
       }
     });
