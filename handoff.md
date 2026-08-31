@@ -1,19 +1,24 @@
 # 專案交接紀錄（handoff.md）
 
-## 📌 目前做到哪
-- [x] 專案初始化完成（L1 本地 + L2 GitHub + L3 Obsidian）
-- [x] 建立 Obsidian 同步資料夾 `/Users/garfiwang/Documents/Obsidian/【筆記】每週財經資訊`
-- [x] 完成 2026-08-31 (週一) 本週同步備份與 GitHub 狀態檢查
-- [x] 設定/重新掛載每週一早上 09:00 自動備份排程 (Cron Expression: `0 9 * * 1`)
+## ⏯️ 目前做到哪
+- [x] 完成 20260824-0828 美債殖利率飆升深度分析之白話重點摘要。
+- [x] 完成手機優先（Mobile-First）大字版 HTML 簡報頁面（基於 Swiper.js，字體 18px-24px，支援上下滑動與左右翻頁）。
+- [x] 成功發布並部署至 GitHub Pages：`https://garfiwang.github.io/weekly-financial-notes/`。
+- [x] 建立並固化專屬全域技能 `weekly-financial-notes-slide`，支援「製作這週的財經簡報」、「製作這週的財經報告」等觸發詞。
+- [x] 同步備份至 Obsidian 知識庫 `/Users/garfiwang/Documents/Obsidian/【筆記】每週財經資訊`。
 
-## 📝 最近更動紀錄
-| 日期時間 | 更新者 | 變更說明 |
-|----------|--------|----------|
-| 2026-08-31 10:37 | Antigravity @ Mac | 建立全域技能 `weekly-financial-notes-slide`，永久固化手機優先大字版 Swiper 排版與自動發布 SOP |
-| 2026-08-31 10:22 | Antigravity @ Mac | 重構前端為 Swiper.js 行動端原生滑動架構，支援真實字級、上下順暢捲動與左右手勢翻頁，徹底解決手機縮放過小問題 |
-| 2026-08-31 10:13 | Antigravity @ Mac | 執行週一同步備份至 Obsidian，確認最新筆記與網頁檔完整傳輸並重掛自動排程 |
-| 2026-08-29 11:20 | Antigravity @ Mac | 完成專案三層級初始化，建立 L1 藍圖、L2 GitHub 私有庫、L3 Obsidian 備份區 |
+## 🚦 目前狀態
+- ✅ **全功能正常運作**：GitHub Pages 簡報線上播放流暢，排版大字適中無跑版。
+- ✅ **自動化連動就緒**：下週放入新筆記後，呼叫技能即可一鍵更新發布。
 
-## 🚀 下一步建議
-1. 將每週整理的最新財經筆記放入本資料夾。
-2. 下次自動排程備份時間為 `2026-09-07 09:00:00`。
+## ➡️ 下一步建議
+1. 下週一放入最新一週的財經資訊筆記（格式如 `YYYYMMDD-MMDD | 主題.gdoc` 或 `.md`）。
+2. 使用觸發詞 **「製作這週的財經簡報」** 或 **「製作這週的財經報告」** 進行一鍵更新。
+
+## ⚠️ 注意事項
+- 全域技能檔案位於 `~/.gemini/config/skills/weekly-financial-notes-slide/`，如換電腦需確認該技能設定是否存在。
+
+## 🕐 最後更新
+- **時間**：2026-08-31 10:41
+- **更新者**：Antigravity @ Mac
+- **Git Push 狀態**：`✅ 已推` (Commit: `5297a79`)
