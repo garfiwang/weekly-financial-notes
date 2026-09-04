@@ -91,7 +91,7 @@
       border-radius: 6px;
     }
 
-    /* 底部控制區：消滅黑色死角留白 */
+    /* 底部控制區 */
     #main-footer {
       flex: 0 0 auto;
       z-index: 50;
@@ -139,10 +139,9 @@
 </head>
 <body>
 
-  <!-- 主 App Flex 容器 -->
   <div id="app-container">
 
-    <!-- 1. 頂部固定 Header：絕對不遮蓋內容標題 -->
+    <!-- 1. 頂部固定 Header -->
     <header id="main-header" class="flex items-center justify-between px-4 py-2.5">
       <div class="flex items-center space-x-2">
         <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
@@ -153,12 +152,12 @@
       </div>
     </header>
 
-    <!-- 2. 中間 Swiper 滿版內容區 -->
+    <!-- 2. 中間 Swiper 滿版內容區 (精準獨立 7 頁) -->
     <main id="main-swiper-container">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
 
-          <!-- ================= Slide 1: 封面 ================= -->
+          <!-- Slide 1: 封面 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content flex flex-col justify-center">
               <div class="inline-flex items-center px-3 py-1 mb-4 text-xs font-bold text-amber-300 bg-amber-500/20 border border-amber-500/30 rounded-full w-fit">
@@ -184,7 +183,7 @@
             </div>
           </div>
 
-          <!-- ================= Slide 2: 一句話看懂 ================= -->
+          <!-- Slide 2: 一句話看懂 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content">
               <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">核心總覽</div>
@@ -227,7 +226,7 @@
             </div>
           </div>
 
-          <!-- ================= Slide 3: 大變局 01 ================= -->
+          <!-- Slide 3: 大變局 01 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content">
               <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">大變局 01</div>
@@ -251,7 +250,7 @@
             </div>
           </div>
 
-          <!-- ================= Slide 4: 大變局 02 ================= -->
+          <!-- Slide 4: 大變局 02 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content">
               <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">大變局 02</div>
@@ -291,7 +290,7 @@
             </div>
           </div>
 
-          <!-- ================= Slide 5: 大變局 03 ================= -->
+          <!-- Slide 5: 大變局 03 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content">
               <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">大變局 03</div>
@@ -315,7 +314,7 @@
             </div>
           </div>
 
-          <!-- ================= Slide 6: 台灣觀察 ================= -->
+          <!-- Slide 6: 台灣觀察 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content">
               <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">台灣深度觀察</div>
@@ -346,7 +345,7 @@
             </div>
           </div>
 
-          <!-- ================= Slide 7: 投資行動建議 ================= -->
+          <!-- Slide 7: 投資行動建議 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content">
               <div class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1">實用策略</div>
@@ -387,7 +386,7 @@
       </div>
     </main>
 
-    <!-- 3. 底部控制列：永遠貼在極底部，包含分頁點點與控制按鈕，消除大塊黑色空白區域 -->
+    <!-- 3. 底部控制列 -->
     <footer id="main-footer">
       <div class="swiper-pagination"></div>
       <div class="flex items-center justify-between pt-1">
