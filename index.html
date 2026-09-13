@@ -125,7 +125,7 @@
 </head>
 <body>
   <div id="app-container">
-    <!-- 1. 頂部導覽列 (Flex 固定項) -->
+    <!-- 1. 頂部導覽列 (Flex 固定高度，不吃內容空間) -->
     <header id="main-header" class="flex items-center justify-between px-4 py-2.5">
       <div class="flex items-center space-x-2">
         <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
@@ -136,7 +136,7 @@
       </div>
     </header>
 
-    <!-- 2. 中間 Swiper 內容區 (Flex 彈性伸縮) -->
+    <!-- 2. 中間 Swiper 內容區 (Flex 填滿剩餘視窗) -->
     <main id="main-swiper-container">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -153,27 +153,27 @@
                   <span class="gold-gradient-text">全球市場大換血，AI 如何獨撐大局？</span>
                 </h1>
                 <p class="text-base text-slate-300 leading-relaxed font-medium">
-                  國際油價飆破 107 美元，美債殖利率直逼 5%！從政府與科技巨頭的「搶錢大作戰」，到傳產存量殘酷內捲與 AI 核心的超強現金流，帶你 3 分鐘看懂市場大洗牌。
+                  國際油價破 107 美元、美債殖利率直逼 5%！從四大科技巨頭搶發 3,200 億高息債，到傳統車廠爆發裁員潮；而台灣手握 8.46 兆超額儲蓄與 AI 增量市場獨領風騷，3 分鐘掌握全球大洗牌關鍵。
                 </p>
               </div>
 
-              <div class="space-y-3 my-6">
+              <div class="space-y-3 my-5">
                 <div class="card-glass p-3.5 flex items-center space-x-3">
                   <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-xl flex-shrink-0">
                     ⚡
                   </div>
                   <div>
                     <h3 class="text-sm font-bold text-white">全球缺錢大作戰</h3>
-                    <p class="text-xs text-slate-400">美債總額破 40 兆 vs 科技巨頭 8% 高息搶資</p>
+                    <p class="text-xs text-slate-400">政府年付 2 兆利息 vs 科技巨頭 3,200 億發債搶資</p>
                   </div>
                 </div>
                 <div class="card-glass p-3.5 flex items-center space-x-3">
                   <div class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-xl flex-shrink-0">
-                    🛡️
+                    🇹🇼
                   </div>
                   <div>
-                    <h3 class="text-sm font-bold text-white">台灣 8.46 兆防護罩</h3>
-                    <p class="text-xs text-slate-400">通吃全球 AI 供應鏈，超額儲蓄游資護體</p>
+                    <h3 class="text-sm font-bold text-white">台灣獨霸 AI 增量市場</h3>
+                    <p class="text-xs text-slate-400">GB200/GB300 大量出貨，8.46 兆游資防護罩</p>
                   </div>
                 </div>
               </div>
@@ -196,7 +196,7 @@
 
               <div class="card-glass p-4 border-l-4 border-l-amber-400">
                 <p class="text-lg font-bold text-amber-200 leading-snug">
-                  「油價飆破百元引爆成本通膨，美債失火推升借錢成本；全球正上演搶錢大換血，只有 AI 核心供應鏈能獨撐大局！」
+                  「地緣衝突推升原料通膨，政府與 AI 巨頭搶錢拉高利率；傳統存量市場慘遭淘汰，只有 AI 核心硬體與資源資產逆勢勝出！」
                 </p>
               </div>
 
@@ -205,7 +205,7 @@
                 <div class="stat-card p-3.5 flex items-center justify-between">
                   <div>
                     <div class="text-xs text-slate-400 font-bold">布蘭特原油價格</div>
-                    <div class="text-xs text-rose-400 font-medium">中東地緣衝突引爆成本</div>
+                    <div class="text-xs text-rose-400 font-medium">中東衝突引爆柴油狂飆 24%~58%</div>
                   </div>
                   <div class="text-right">
                     <span class="text-3xl font-black text-rose-400">$107</span>
@@ -216,96 +216,97 @@
                 <div class="stat-card p-3.5 flex items-center justify-between">
                   <div>
                     <div class="text-xs text-slate-400 font-bold">10年期美債殖利率</div>
-                    <div class="text-xs text-amber-400 font-medium">全球借貸資金成本基準</div>
+                    <div class="text-xs text-amber-400 font-medium">全球政府年利息支出破 2 兆美元</div>
                   </div>
                   <div class="text-right">
                     <span class="text-3xl font-black text-amber-400">~ 5.0%</span>
-                    <span class="text-xs font-bold text-slate-400">高檔震盪</span>
+                    <span class="text-xs font-bold text-slate-400">逼近高點</span>
                   </div>
                 </div>
 
                 <div class="stat-card p-3.5 flex items-center justify-between">
                   <div>
-                    <div class="text-xs text-slate-400 font-bold">美聯邦政府總債務</div>
-                    <div class="text-xs text-cyan-400 font-medium">每年利息支出高達 1 兆美元</div>
+                    <div class="text-xs text-slate-400 font-bold">四大科技巨頭發債總額</div>
+                    <div class="text-xs text-cyan-400 font-medium">微軟/Google/Meta 高息吸走資金</div>
                   </div>
                   <div class="text-right">
-                    <span class="text-3xl font-black text-cyan-400">40 兆</span>
+                    <span class="text-3xl font-black text-cyan-400">3,200 億</span>
                     <span class="text-xs font-bold text-slate-400">美元</span>
                   </div>
                 </div>
               </div>
 
               <p class="text-xs text-slate-400 leading-relaxed pt-1">
-                💡 <strong>為什麼油價與美債利率會同時失火？</strong> 因為市場陷入「超級搶錢大作戰」，政府與科技巨頭都在爭搶有限的資金！
+                💡 <strong>為什麼借貸成本持續飆升？</strong> 因為政府債台高築需要借新還舊，同時科技巨頭開出高利搶資，導致國債買盤嚴重枯竭！
               </p>
             </div>
           </div>
 
-          <!-- SLIDE 3: 飆升主因 01：市場缺錢與借貸成本拉高 -->
+          <!-- SLIDE 3: 為什麼會這樣？Why 資金極度稀缺的搶錢大作戰 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content space-y-4">
               <div class="border-l-4 border-rose-500 pl-3">
-                <span class="text-xs font-bold text-rose-400 tracking-wider">KEY FACTOR 01</span>
-                <h2 class="text-2xl font-black text-white mt-0.5">搶錢大作戰：誰把資金吸乾了？</h2>
+                <span class="text-xs font-bold text-rose-400 tracking-wider">WHY • 搶錢大作戰</span>
+                <h2 class="text-2xl font-black text-white mt-0.5">為什麼全球資金極度稀缺？</h2>
               </div>
 
               <p class="text-sm text-slate-300 font-medium leading-relaxed">
-                政府與科技巨頭同時極度缺錢，傳統國債市場遭到私人部門資金強烈「分流」：
+                政府與科技巨頭同時爭搶流動性，傳統國債市場遭到私人部門資金嚴重排擠：
               </p>
 
               <div class="space-y-3">
                 <div class="card-glass p-4 border-l-4 border-l-rose-400">
                   <div class="flex items-center space-x-2 mb-1">
                     <span class="text-base">🏛️</span>
-                    <h3 class="text-base font-bold text-white">1. 美國政府「借新還舊」發債過剩</h3>
+                    <h3 class="text-base font-bold text-white">1. 政府發債嚴重過剩（借新還舊）</h3>
                   </div>
                   <p class="text-sm text-slate-300 leading-relaxed">
-                    美國聯邦債務突破 <strong>40 兆美元</strong>，光是一年要繳的利息就高達 <strong>1 兆美元</strong>！在財政赤字持續擴大下，財政部只能源源不絕發行新公債來借錢還利息。
+                    美國政府總債務突破 <strong>40 兆美元</strong>，全球政府光是一年要支付的利息就超過 <strong>2 兆美元</strong>！為了償還利息與支應開銷，各國只能瘋狂發行新國債。
                   </p>
                 </div>
 
                 <div class="card-glass p-4 border-l-4 border-l-amber-400">
                   <div class="flex items-center space-x-2 mb-1">
                     <span class="text-base">🏢</span>
-                    <h3 class="text-base font-bold text-white">2. 科技巨頭 7%~8% 高息搶走資金</h3>
+                    <h3 class="text-base font-bold text-white">2. AI 四大巨頭狂發 3,200 億搶走買家</h3>
                   </div>
                   <p class="text-sm text-slate-300 leading-relaxed">
-                    微軟、Google、Meta 等巨頭為打造 AI 算力中心，瘋狂發行 <strong>7% 至 8% 高利率頂級公司債</strong>。機構買科技債安全又高利，導致美國國債買盤嚴重枯竭！
+                    微軟、Google、Meta 等巨頭為建置 AI 資料中心，今年光發行的高利投資級公司債就達 <strong>3,200 億美元</strong>。科技債利息誘人又安全，吸引市場資金蜂擁而入，沒人想買低利國債。
                   </p>
                 </div>
 
                 <div class="card-glass p-4 border-l-4 border-l-cyan-400">
                   <div class="flex items-center space-x-2 mb-1">
                     <span class="text-base">📈</span>
-                    <h3 class="text-base font-bold text-white">3. 連鎖效應：全球借貸成本全面被拉高</h3>
+                    <h3 class="text-base font-bold text-white">3. 全球借貸成本被全面推高</h3>
                   </div>
                   <p class="text-sm text-slate-300 leading-relaxed">
-                    當買國債的人大幅減少，美國政府被迫拉高利率以吸引買家，直接將全球無風險利率推上逼近 5% 的危險水位。
+                    在國債供給過剩且買盤被 AI 巨頭吸乾下，政府被迫持續拉高公債殖利率吸引買家，進而推升全球借錢成本逼近 5%！
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- SLIDE 4: 飆升主因 02：成本狂飆與存量殘酷內捲 -->
+          <!-- SLIDE 4: 如何產生的？How 地緣衝擊與存量殘酷內捲 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content space-y-4">
               <div class="border-l-4 border-amber-500 pl-3">
-                <span class="text-xs font-bold text-amber-400 tracking-wider">KEY FACTOR 02</span>
-                <h2 class="text-2xl font-black text-white mt-0.5">原料暴漲與傳統製造「存量殘殺」</h2>
+                <span class="text-xs font-bold text-amber-400 tracking-wider">HOW • 連鎖事件</span>
+                <h2 class="text-2xl font-black text-white mt-0.5">地緣衝擊與存量市場殘殺</h2>
               </div>
 
+              <!-- 關鍵數據卡 -->
               <div class="grid grid-cols-2 gap-2.5">
                 <div class="stat-card p-3 text-center">
-                  <div class="text-xs text-slate-400">貨運柴油暴漲</div>
-                  <div class="text-2xl font-black text-rose-400">+58%</div>
-                  <div class="text-[11px] text-slate-400">物流成本大增</div>
+                  <div class="text-xs text-slate-400">手機市場需求</div>
+                  <div class="text-2xl font-black text-rose-400">-14%</div>
+                  <div class="text-[11px] text-slate-400">重度衰退飽和</div>
                 </div>
                 <div class="stat-card p-3 text-center">
-                  <div class="text-xs text-slate-400">化工原料硫磺</div>
-                  <div class="text-2xl font-black text-amber-400">+145%</div>
-                  <div class="text-[11px] text-slate-400">化肥/工業重擔</div>
+                  <div class="text-xs text-slate-400">柴油價格暴增</div>
+                  <div class="text-2xl font-black text-amber-400">+24%~58%</div>
+                  <div class="text-[11px] text-slate-400">美伊衝突油輪受創</div>
                 </div>
               </div>
 
@@ -313,121 +314,126 @@
                 <div class="card-glass p-3.5">
                   <h3 class="text-sm font-bold text-white flex items-center space-x-2 mb-1">
                     <span>📱</span>
-                    <span>手機與傳統汽車：進入存量飽和殘殺</span>
+                    <span>蘋果推 11.8 萬摺疊機拚極限單價</span>
                   </h3>
                   <p class="text-xs text-slate-300 leading-relaxed">
-                    換機換車週期大幅拉長，受限於記憶體與材料通膨，廠商面臨<strong>「賣一部賠一部」</strong>的困境。
-                  </p>
-                </div>
-
-                <div class="card-glass p-3.5">
-                  <h3 class="text-sm font-bold text-white flex items-center space-x-2 mb-1">
-                    <span>🍎</span>
-                    <span>蘋果推 11.8 萬摺疊機拚超高單價</span>
-                  </h3>
-                  <p class="text-xs text-slate-300 leading-relaxed">
-                    銷量無法成長，只能藉由極限拉高旗艦單價（ASP）來死守營收與毛利率防線。
+                    面對零組件與記憶體成本大漲，蘋果推出首款 iPhone 摺疊機（展開 7.6 吋、厚 5.2mm），靠拉高旗艦平均售價（ASP）維持獲利。
                   </p>
                 </div>
 
                 <div class="card-glass p-3.5">
                   <h3 class="text-sm font-bold text-white flex items-center space-x-2 mb-1">
                     <span>🚗</span>
-                    <span>歐洲傳統車廠利潤暴跌與大裁員</span>
+                    <span>歐洲傳統車廠爆發大規模裁員潮</span>
                   </h3>
                   <p class="text-xs text-slate-300 leading-relaxed">
-                    福斯、BMW、保時捷面臨電動車競爭與傳統燃油車銷量滑坡，獲利雪崩並啟動大規模精簡人事。
+                    全球車市飽和，歐洲豪車遭中國電動車夾擊降價保量：<strong>福斯裁 5 萬人、BMW 裁 8 千人、保時捷裁 5 千人</strong>！
+                  </p>
+                </div>
+
+                <div class="card-glass p-3.5">
+                  <h3 class="text-sm font-bold text-white flex items-center space-x-2 mb-1">
+                    <span>🌍</span>
+                    <span>全球債市失火：日債殖利率 3% 與法國重壓</span>
+                  </h3>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    日本 10 年債殖利率衝上 3% 本世紀新高逼迫日銀加速升息縮表；法國赤字高達 5.1%，主權公債遭外資無情拋售。
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- SLIDE 5: 飆升主因 03：主權信用承壓與產業極端分化 -->
+          <!-- SLIDE 5: 未來局勢 01：美股估值降溫非泡沫 & 資源資產大勝 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content space-y-4">
               <div class="border-l-4 border-indigo-500 pl-3">
-                <span class="text-xs font-bold text-indigo-400 tracking-wider">KEY FACTOR 03</span>
-                <h2 class="text-2xl font-black text-white mt-0.5">主權信用危機 vs AI 核心分化</h2>
+                <span class="text-xs font-bold text-indigo-400 tracking-wider">WHAT • 局勢展望 01</span>
+                <h2 class="text-2xl font-black text-white mt-0.5">美股回調非泡沫 & 資源大勝</h2>
               </div>
 
               <div class="space-y-3">
-                <div class="card-glass p-3.5 border-l-4 border-l-rose-500">
-                  <h3 class="text-sm font-bold text-white flex items-center space-x-2 mb-1">
-                    <span>🌍</span>
-                    <span>各國政府與金融體系承受重壓</span>
-                  </h3>
-                  <ul class="text-xs text-slate-300 space-y-1.5 list-disc pl-4 leading-relaxed">
-                    <li><strong>日本</strong>：央行被迫跟進升息，引發日圓劇烈波動與國民實質購買力受損。</li>
-                    <li><strong>法國</strong>：赤字過高，政府公債遭外資無情拋售，主權債陷入重挫風暴。</li>
-                  </ul>
-                </div>
-
                 <div class="card-glass p-3.5 border-l-4 border-l-emerald-500">
                   <h3 class="text-sm font-bold text-white flex items-center space-x-2 mb-1">
                     <span>🤖</span>
-                    <span>美股估值降溫：是「大換血」而非泡沫</span>
+                    <span>美股：估值降溫修正，並非泡沫破裂</span>
                   </h3>
                   <p class="text-xs text-slate-300 leading-relaxed">
-                    借貸成本高漲造成股市估值短線回檔（左側修正），但頂級科技巨頭手握<strong>數千億美元淨現金</strong>，且 <strong>2 奈米、CoWoS 高階封裝與 AI 伺服器</strong>產能依然供不應求，產業形成極端「雙軌分化」！
+                    高借貸成本壓制股市估值，但美營統計機構手握 <strong>1,630 億美元充沛現金</strong>，科技巨頭獲利強勁，AI 基建仍在初段，回檔提供中期重新佈局的絕佳機會。
                   </p>
                 </div>
 
-                <div class="stat-card p-3.5">
+                <div class="stat-card p-3.5 space-y-2">
                   <div class="flex items-center justify-between">
-                    <div>
-                      <div class="text-xs font-bold text-slate-300">極端雙軌分化格局</div>
-                      <div class="text-[11px] text-slate-400">贏家通吃 vs 存量寒冬</div>
+                    <span class="text-xs font-bold text-amber-400">📊 2026 年資產表現排行榜</span>
+                    <span class="text-[11px] text-slate-400">資源跑贏金融 • 價值跑贏成長</span>
+                  </div>
+                  <div class="grid grid-cols-3 gap-2 text-center pt-1">
+                    <div class="p-2 rounded bg-slate-900/80 border border-amber-500/30">
+                      <div class="text-[10px] text-slate-400">原物料大宗</div>
+                      <div class="text-base font-black text-amber-300">+42.7%</div>
+                      <div class="text-[9px] text-amber-400/80">漲幅冠軍 🥇</div>
                     </div>
-                    <div class="text-right text-xs font-bold">
-                      <span class="text-emerald-400">AI 硬體超高毛利 🚀</span><br>
-                      <span class="text-rose-400">傳統製造面臨寒冬 ❄️</span>
+                    <div class="p-2 rounded bg-slate-900/80 border border-yellow-500/30">
+                      <div class="text-[10px] text-slate-400">現貨黃金</div>
+                      <div class="text-base font-black text-yellow-300">+2.6%</div>
+                      <div class="text-[9px] text-yellow-400/80">高檔穩健 🥈</div>
+                    </div>
+                    <div class="p-2 rounded bg-slate-900/80 border border-cyan-500/30">
+                      <div class="text-[10px] text-slate-400">比特幣 BTC</div>
+                      <div class="text-base font-black text-cyan-300">顯著反彈</div>
+                      <div class="text-[9px] text-cyan-400/80">脫離年內低點</div>
                     </div>
                   </div>
+                </div>
+
+                <div class="card-glass p-3.5 border-l-4 border-l-cyan-400">
+                  <h3 class="text-sm font-bold text-white flex items-center space-x-2 mb-1">
+                    <span>🏛️</span>
+                    <span>美期中選舉變數與「核能復興」</span>
+                  </h3>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    川普支持率滑落至 39%~40%，祭出守住國會普發 <strong>5,000 美元（約 15 萬台幣）</strong>紅利；美國跨黨派以<strong>零反對票</strong>通過「核能復興」法案滿足 AI 電力渴求！
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- SLIDE 6: 區域/台灣深度觀察 -->
+          <!-- SLIDE 6: 未來局勢 02：台灣獨霸 AI 增量市場與 8.46 兆游資 -->
           <div class="swiper-slide">
             <div class="slide-scroll-content space-y-4">
               <div class="border-l-4 border-cyan-500 pl-3">
-                <span class="text-xs font-bold text-cyan-400 tracking-wider">TAIWAN & HAVEN ASSETS</span>
-                <h2 class="text-2xl font-black text-white mt-0.5">台灣防護罩與避險新港灣</h2>
+                <span class="text-xs font-bold text-cyan-400 tracking-wider">WHAT • 局勢展望 02</span>
+                <h2 class="text-2xl font-black text-white mt-0.5">台灣獨霸 AI 增量市場與超額游資</h2>
               </div>
 
               <div class="card-glass p-4 border-l-4 border-l-cyan-400 space-y-2">
                 <div class="flex items-center justify-between">
-                  <h3 class="text-base font-bold text-white">🇹🇼 台灣市場的 2 大底氣</h3>
-                  <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-500/20 px-2 py-0.5 rounded">抗震極強</span>
+                  <h3 class="text-base font-bold text-white">🇹🇼 台灣市場的無敵優勢</h3>
+                  <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-500/20 px-2 py-0.5 rounded">通吃增量</span>
                 </div>
                 <div class="text-xs text-slate-200 space-y-2 leading-relaxed">
                   <p>
-                    1. <strong>產業通吃全球</strong>：掌握 2 奈米、CoWoS 先進封裝與全球 9 成以上 AI 伺服器製造，訂單能見度極高。
+                    ⚡ <strong>通吃 AI 核心供應鏈</strong>：不靠飽和的手機與車用，全面掌握 <strong>GB200 / GB300 伺服器出貨</strong>、台積電 2 奈米、CoWoS 先進封裝、CPO 光通訊、特化材料與先進散熱。
                   </p>
                   <p>
-                    2. <strong>8.46 兆超額儲蓄游資</strong>：國內資金極度充沛，相比高債務的歐美國家，在面對全球債市風暴時展現出無與倫比的抗風險實力。
+                    ⚡ <strong>晶片製造實力強悍</strong>：單是半導體晶片製造即占全台用電量 25%，製造業動能極度澎湃。
                   </p>
                 </div>
               </div>
 
-              <div class="stat-card p-4 space-y-3">
-                <div class="text-xs font-bold text-amber-400 tracking-wider">💰 避險資金湧入去中心化資產</div>
-                <div class="grid grid-cols-2 gap-3">
-                  <div class="p-2.5 rounded-lg bg-slate-900/80 border border-amber-500/30 text-center">
-                    <div class="text-xs text-slate-400">現貨黃金價格</div>
-                    <div class="text-xl font-black text-amber-300 mt-0.5">$4,600</div>
-                    <div class="text-[10px] text-amber-400/80">美元 / 盎司</div>
-                  </div>
-                  <div class="p-2.5 rounded-lg bg-slate-900/80 border border-cyan-500/30 text-center">
-                    <div class="text-xs text-slate-400">比特幣 (BTC)</div>
-                    <div class="text-xl font-black text-cyan-300 mt-0.5">$78,000</div>
-                    <div class="text-[10px] text-cyan-400/80">突破歷史區間</div>
-                  </div>
+              <div class="stat-card p-4 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <div class="text-xs font-bold text-amber-400">🛡️ 8.46 兆超額儲蓄防護罩</div>
+                  <span class="text-xs font-mono font-bold text-emerald-400">抗債市風暴</span>
                 </div>
-                <p class="text-[11px] text-slate-400 leading-snug">
-                  當市場對單一主權政府信用與法幣通膨產生疑慮時，不受政府干預的實體與數位避險資產成為抗通膨終極盾牌。
+                <div class="flex items-baseline space-x-2">
+                  <span class="text-3xl font-black text-emerald-400">8.46 兆</span>
+                  <span class="text-xs font-bold text-slate-400">新台幣超額儲蓄</span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  國內游資極度充沛！相比於背負龐大國債的歐美國家，台灣在面對這波全球債市失火風暴時，具備極強的抗震防禦力。
                 </p>
               </div>
             </div>
@@ -446,10 +452,10 @@
                 <div class="card-glass p-3.5 border-l-4 border-l-emerald-400">
                   <div class="flex items-center space-x-2 mb-1">
                     <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-black text-xs flex items-center justify-center">1</span>
-                    <h3 class="text-sm font-bold text-white">擁抱 AI 核心「實質現金流」</h3>
+                    <h3 class="text-sm font-bold text-white">擁抱 AI 增量與高階硬體核心</h3>
                   </div>
                   <p class="text-xs text-slate-300 leading-relaxed">
-                    拒絕空泛的概念炒作，鎖定手握千億現金的科技巨頭、先進製程（2 奈米/CoWoS）及 AI 伺服器關鍵供應鏈。
+                    鎖定手握千億現金巨頭，以及台積電 2 奈米、CoWoS、GB200/GB300 伺服器、CPO 與散熱等真金白銀出貨龍頭。
                   </p>
                 </div>
 
@@ -457,10 +463,10 @@
                 <div class="card-glass p-3.5 border-l-4 border-l-rose-400">
                   <div class="flex items-center space-x-2 mb-1">
                     <span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 font-black text-xs flex items-center justify-center">2</span>
-                    <h3 class="text-sm font-bold text-white">避開存量內捲與高槓桿重災區</h3>
+                    <h3 class="text-sm font-bold text-white">避開存量淘汰與大裁員重災區</h3>
                   </div>
                   <p class="text-xs text-slate-300 leading-relaxed">
-                    原料通膨（油價/柴油/硫磺）與借貸高息將加劇傳統車廠與低階消費電子的利潤侵蝕，嚴防缺乏定價權的代工廠。
+                    智慧手機需求衰退 14%，傳統歐洲車廠爆發萬人裁員潮。原料通膨與高息將加速淘汰缺乏定價權的存量代工廠。
                   </p>
                 </div>
 
@@ -468,10 +474,10 @@
                 <div class="card-glass p-3.5 border-l-4 border-l-amber-400">
                   <div class="flex items-center space-x-2 mb-1">
                     <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 font-black text-xs flex items-center justify-center">3</span>
-                    <h3 class="text-sm font-bold text-white">配置對抗法幣貶值的避險資產</h3>
+                    <h3 class="text-sm font-bold text-white">順應「資源大勝」配置抗通膨與核能</h3>
                   </div>
                   <p class="text-xs text-slate-300 leading-relaxed">
-                    美國 40 兆債務與主權赤字風險揮之不去，可適度配置實體黃金或去中心化資產，建立防範極端風險的防禦護城河。
+                    原物料大宗（+42.7%）與貴金屬強勢，適度配置抗通膨避險資產；並關注全美零反對票通過的「核能復興」長期題材。
                   </p>
                 </div>
               </div>
