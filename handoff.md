@@ -1,35 +1,35 @@
 # 專案交接紀錄（handoff.md）
 
 ## ⏯️ 目前做到哪
-- [x] **[雲端不斷電 GitHub Actions] 自動研讀與同步** (2026-11-06 19:36)：完成最新週報 `20261106` 檢查與波克夏知識庫自動增補。
-- [x] **[雲端不斷電 GitHub Actions] 自動研讀與同步** (2026-11-06 09:56)：完成最新週報 `20261102-1103` 檢查與波克夏知識庫自動增補。
-- [x] **完成專案全期財經週報系統化學習與紀錄**：
-  - 深度研讀 2026.08 至 2026.11 跨越 3 個多月的 7 份關鍵週報（含美債殖利率破 5%、AI 巨頭發債搶錢、雙層世界、科技巨頭補跌、費半墜入技術性熊市）。
-  - 將**波克夏·海瑟威（巴菲特與蒙格）操盤心法**深度注入分析體系，確立實質盈餘（Owner Earnings）、護城河定價權、安全邊際與好球區原則。
-  - 正式建立永久知識庫與策略指南：`財經週報學習總綱與波克夏投資決策知識庫.md`。
-- [x] 完成本週（2026.10.05 - 10.09）《AI 狂歡與債市寒冬：走進「企業賺錢、政府缺錢、人民沒錢」的雙層世界》財經週報深度排版與 Google 文件匯出。
-- [x] 嚴格落實專案限定技能 `weekly-financial-report-format` 五大黃金規範：
-  1. **四級標題階梯**：H1（24pt）→ H2（19pt 壹Why、貳How、參What）→ H3（15.5pt 一、二、三）→ H4（13.5pt （一）、（二）、（三）），嚴禁跳級。
-  2. **內文首行縮排**：段落首行縮排 2 字元（HTML `text-indent: 26pt;`，Markdown `&#12288;&#12288;`）。
-  3. **最小字級規範**：全篇正文、引言、註解均 ≥ 12pt（正文統一 12.5pt，行高 1.85）。
-  4. **關鍵數字紅字粗體**：所有重要統計、碼數、百分比、年期（如 7%~8%、5%、100 美元、三分之二、50%、7.4%、30 年期、20 多年等）一律以 `#c00000` 紅字粗體強調。
-  5. **自動同步匯出**：透過 Google Drive API Multipart 上傳至父目錄 `1O8_AbfKDhEA_j24IsmbFwnnpgFgh-yU9`，成功建立原生 Google 文件並同步產生本地 `.gdoc` 捷徑。
-- [x] 本次依使用者指示：**跳過網頁簡報製作**，聚焦於週報深度排版與文件備份。
-- [x] 完成多層級同步：本地 GDrive (L1) + Obsidian Vault (L3) 備份。
+- [x] **切換角色為「首席投資策略師兼專屬財經智庫」**：全面注入波克夏·海瑟威（華倫·巴菲特與查理·蒙格）操盤心法，確立「實質盈餘（Owner Earnings）」、「定價權護城河」、「安全邊際」與「好球區原則」。
+- [x] **全期週報深度學習與知識庫建立**：系統化研讀 2026.08 至 2026.11 全系列週報，正式產出永久知識庫：`財經週報學習總綱與波克夏投資決策知識庫.md`。
+- [x] **部署「每週一晚上 17:00 自動研讀任務」（雙重防線）**：
+  - 本機端：建立 Antigravity 自動化 Sidecar `weekly-financial-learning`。
+  - 雲端不斷電：建立並部署 GitHub Actions 雲端定時工作流（`.github/workflows/weekly-financial-learning.yml` ＋ `scripts/auto_learn_weekly_reports.py`），實測通過（Run #42147997608 綠燈），達成 Mac 完全關機拔插頭時，雲端仍 100% 自動無人值守研讀與 Push。
+- [x] **部署「每週一早上 05:00 英文深度外媒週報生成與派送任務」**：
+  - 本機端建立 Antigravity 自動化 Sidecar `weekly-global-financial-report-generation`。
+  - 完成全流程實測：透過 web search Deep Research 過去 7 天英文專業外媒（Bloomberg, Reuters, FT, WSJ, CNBC, MarketWatch），產出並儲存繁體中文週報 `20261106 全球財經週報.md`（嚴格落實四級階梯、首行縮排、紅字粗體、最小 12pt 等規範）。
+  - 依 `yyyymmdd - 全球財經週報` 格式自動匯出 Google 文件（`20261106 - 全球財經週報`），生成本地 `.gdoc` 捷徑。
+  - 透過 macOS Apple Mail 成功將週報與線上連結自動寄送至 `richnews168@gmail.com`。
+- [x] **多層級同步完成**：L1 本地 GDrive、L2 GitHub（`main` 分支最新 commit）、L3 Obsidian 第二大腦全面同步。
 
 ## 🚦 目前狀態
-- ✅ **Google 文件匯出成功**：[線上預覽與編輯](https://docs.google.com/document/d/1oK4ytKgUuf8aZ8TK6TI0knGKTh7ES-Ib58VbYAOZ-74)（檔案 ID: `1oK4ytKgUuf8aZ8TK6TI0knGKTh7ES-Ib58VbYAOZ-74`）。
-- ✅ **本地與 Obsidian 備份完成**：`20261005-1009 全球宏觀經濟與雙層世界深度解讀.md` 已備份至 Obsidian Vault。
+- ✅ **自動化雙排程就緒**：
+  1. 每週一 05:00：`weekly-global-financial-report-generation`（英文外媒研析 → 繁中週報產出 → 匯出 GDoc → 寄 Gmail）。
+  2. 每週一 17:00：`weekly-financial-learning` ＋ GitHub Actions 雲端工作流（自動研讀最新週報 → 增補波克夏知識庫 → Git Push）。
+- ✅ **最新 Google 文件線上就緒**：[20261106 - 全球財經週報](https://docs.google.com/document/d/1sHyzbL-tTC3CGkltvjO5bMxOcRenSyhFhrB0C0wdkT4)（文件 ID: `1sHyzbL-tTC3CGkltvjO5bMxOcRenSyhFhrB0C0wdkT4`）。
+- ✅ **郵件派送實測成功**：Apple Mail 已成功向 `richnews168@gmail.com` 發送出刊通知信。
 
 ## ➡️ 下一步建議
-1. 若後續需要產出本週簡報，可隨時觸發 **「製作這週的財經簡報」** 產生 7 頁白話互動簡報。
-2. 若確認本次工作告一段落，可執行 **「收工」** 進行 Git commit/push 完整同步。
+1. 若週一早上收信後需產出本週網頁簡報，可隨時觸發 **「製作這週的財經簡報」** 自動生成 7 頁 Swiper.js 手機版簡報並發布至 GitHub Pages。
+2. 隨時可針對任一個股（如台積電、輝達、Alphabet）提出「進行波克夏式壓力測試」，即刻進行護城河與估值診斷。
 
 ## ⚠️ 注意事項
-- 專案排版技能已固化於 `.agents/skills/weekly-financial-report-format/SKILL.md`，限定本專案使用。
-- Google Drive 產生的原生文件已正確繼承父資料夾共用權限。
+- **本機排程啟用**：在 Antigravity 的 `sidecar://dashboard` 面板中，請確保兩個 Sidecar 開關處於啟用狀態。
+- **雲端排程免開機**：每週一 17:00 的研讀任務由 GitHub Actions 雲端虛擬機承擔，本地電腦關機完全不影響雲端執行。
+- **Google 文件權限**：Google Drive API Multipart 上傳的父目錄 ID 為 `1O8_AbfKDhEA_j24IsmbFwnnpgFgh-yU9`，會自動繼承共用權限並生成本地 `.gdoc` 捷徑。
 
 ## 🕐 最後更新
-- **時間**：2026-11-06 19:36
-- **更新者**：GitHub Actions (雲端不斷電自動研讀任務)
-- **Git Push 狀態**：`⏳ 待收工推動`
+- **時間**：2026-11-06 19:48
+- **更新者**：Antigravity @ Mac (首席投資策略師)
+- **Git Push 狀態**：`⏳ 待推`
