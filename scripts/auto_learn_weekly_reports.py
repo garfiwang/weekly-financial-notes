@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-每週財經週報雲端自動研讀與波克夏知識庫更新腳本
+每週財經週報雲端自動研讀與價值投資決策知識庫更新腳本
 執行環境：GitHub Actions (雲端定時排程每週一 17:00 UTC+8)
 """
 
@@ -88,7 +88,7 @@ def update_knowledge_base(kb_path, latest_report, all_reports):
     # 在壹、全景宏觀週期演變圖譜中追加節點備註
     update_note = f"\n\n### 📌 最新週期動態追加（{latest_date}）：{latest_title}\n"
     update_note += f"- **核心宏觀摘要**：{latest_summary[:300]}...\n"
-    update_note += f"- **波克夏觀點檢驗**：在 {latest_date} 的市場震盪中，持續檢視實質盈餘（Owner Earnings）與安全邊際（Margin of Safety），嚴格落實非對稱賠率配置。\n"
+    update_note += f"- **價值投資觀點檢驗**：在 {latest_date} 的市場震盪中，持續檢視實質盈餘（Owner Earnings）與安全邊際（Margin of Safety），嚴格落實非對稱賠率配置。\n"
 
     # 在肆、當前節點前插入
     insert_pos = kb_text.find("## 肆、")
@@ -114,7 +114,7 @@ def update_handoff_log(handoff_path, latest_report):
     taipei_now = get_taipei_now().strftime("%Y-%m-%d %H:%M")
     latest_date = latest_report["date"]
 
-    log_entry = f"- [x] **[雲端不斷電 GitHub Actions] 自動研讀與同步** ({taipei_now})：完成最新週報 `{latest_date}` 檢查與波克夏知識庫自動增補。\n"
+    log_entry = f"- [x] **[雲端不斷電 GitHub Actions] 自動研讀與同步** ({taipei_now})：完成最新週報 `{latest_date}` 檢查與價值投資決策知識庫自動增補。\n"
 
     # 在 ## ⏯️ 目前做到哪 底下追加
     if "## ⏯️ 目前做到哪" in handoff_text:
