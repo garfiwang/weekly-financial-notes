@@ -11,16 +11,16 @@
     <style>
       :root {
         --bg: #070a13;
-        --card-bg: rgba(15, 23, 42, 0.88);
-        --card-border: rgba(255, 255, 255, 0.14);
+        --card-bg: rgba(15, 23, 42, 0.93);
+        --card-border: rgba(255, 255, 255, 0.18);
         --cyan: #38bdf8;
-        --cyan-glow: rgba(56, 189, 248, 0.35);
+        --cyan-glow: rgba(56, 189, 248, 0.45);
         --red: #ef4444;
-        --red-glow: rgba(239, 68, 68, 0.35);
+        --red-glow: rgba(239, 68, 68, 0.45);
         --gold: #f59e0b;
-        --gold-glow: rgba(245, 158, 11, 0.35);
+        --gold-glow: rgba(245, 158, 11, 0.45);
         --emerald: #10b981;
-        --emerald-glow: rgba(16, 185, 129, 0.35);
+        --emerald-glow: rgba(16, 185, 129, 0.45);
         --text-pri: #ffffff;
         --text-sec: #94a3b8;
         --font-family: "Noto Sans TC", system-ui, sans-serif;
@@ -48,15 +48,15 @@
         background: radial-gradient(circle at 50% 25%, #131d36 0%, #070a13 85%);
       }
 
-      /* Ambient Light Glows */
+      /* Ambient Lights */
       .ambient-glow {
         position: absolute;
-        width: 800px;
-        height: 800px;
+        width: 900px;
+        height: 900px;
         border-radius: 50%;
         filter: blur(140px);
         pointer-events: none;
-        opacity: 0.25;
+        opacity: 0.3;
       }
       .ambient-glow-1 {
         top: -100px;
@@ -72,13 +72,13 @@
         position: absolute;
         inset: 0;
         background-image: 
-          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
         background-size: 60px 60px;
         pointer-events: none;
       }
 
-      /* Clips Container */
+      /* Clips Container - Maximized Canvas space (Edge-to-edge layout) */
       .clip {
         position: absolute;
         inset: 0;
@@ -87,226 +87,237 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 190px 48px 290px 48px; /* Top 180px, Bottom 280px safe zones */
+        padding: 140px 28px 240px 28px; /* Safe zone bounds: 1024px width */
       }
 
-      /* Badges & Headers */
+      /* Badges & Headers - Maximum Impact */
       .badge-wrap {
         display: flex;
         justify-content: center;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
       }
       .badge {
-        padding: 12px 32px;
+        padding: 16px 44px;
         border-radius: 999px;
-        font-size: 28px;
-        font-weight: 700;
+        font-size: 38px;
+        font-weight: 900;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 14px;
       }
       .badge-cyan {
-        background: rgba(56, 189, 248, 0.16);
+        background: rgba(56, 189, 248, 0.2);
         color: var(--cyan);
-        border: 1.5px solid rgba(56, 189, 248, 0.45);
-        box-shadow: 0 0 25px var(--cyan-glow);
+        border: 2.5px solid rgba(56, 189, 248, 0.55);
+        box-shadow: 0 0 35px var(--cyan-glow);
       }
       .badge-red {
-        background: rgba(239, 68, 68, 0.16);
+        background: rgba(239, 68, 68, 0.2);
         color: #f87171;
-        border: 1.5px solid rgba(239, 68, 68, 0.45);
-        box-shadow: 0 0 25px var(--red-glow);
+        border: 2.5px solid rgba(239, 68, 68, 0.55);
+        box-shadow: 0 0 35px var(--red-glow);
       }
       .badge-gold {
-        background: rgba(245, 158, 11, 0.16);
+        background: rgba(245, 158, 11, 0.2);
         color: #fbbf24;
-        border: 1.5px solid rgba(245, 158, 11, 0.45);
-        box-shadow: 0 0 25px var(--gold-glow);
+        border: 2.5px solid rgba(245, 158, 11, 0.55);
+        box-shadow: 0 0 35px var(--gold-glow);
       }
       .badge-emerald {
-        background: rgba(16, 185, 129, 0.16);
+        background: rgba(16, 185, 129, 0.2);
         color: #34d399;
-        border: 1.5px solid rgba(16, 185, 129, 0.45);
-        box-shadow: 0 0 25px var(--emerald-glow);
+        border: 2.5px solid rgba(16, 185, 129, 0.55);
+        box-shadow: 0 0 35px var(--emerald-glow);
       }
 
+      /* Maximum Title Typography */
       .scene-title {
-        font-size: 60px;
+        font-size: 84px;
         font-weight: 900;
-        line-height: 1.25;
+        line-height: 1.18;
         text-align: center;
         margin-bottom: 16px;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.025em;
+        width: 100%;
       }
       .scene-desc {
-        font-size: 30px;
-        color: var(--text-sec);
+        font-size: 42px;
+        font-weight: 700;
+        color: #cbd5e1;
         text-align: center;
-        margin-bottom: 40px;
-        line-height: 1.4;
+        margin-bottom: 34px;
+        line-height: 1.35;
+        width: 100%;
       }
 
-      /* Dual Stat Cards */
+      /* Dual Cards Maximized to edge */
       .dual-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 28px;
+        gap: 24px;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 6px;
       }
       .stat-card {
-        padding: 38px 26px;
-        border-radius: 28px;
+        padding: 42px 24px;
+        border-radius: 36px;
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 420px;
+        height: 480px;
       }
       .card-cyan {
-        background: rgba(15, 23, 42, 0.88);
-        border: 1.5px solid rgba(56, 189, 248, 0.38);
-        box-shadow: inset 0 0 30px rgba(56, 189, 248, 0.08);
+        background: rgba(15, 23, 42, 0.94);
+        border: 2.5px solid rgba(56, 189, 248, 0.5);
+        box-shadow: inset 0 0 40px rgba(56, 189, 248, 0.15);
       }
       .card-red {
-        background: rgba(15, 23, 42, 0.88);
-        border: 1.5px solid rgba(239, 68, 68, 0.38);
-        box-shadow: inset 0 0 30px rgba(239, 68, 68, 0.08);
+        background: rgba(15, 23, 42, 0.94);
+        border: 2.5px solid rgba(239, 68, 68, 0.5);
+        box-shadow: inset 0 0 40px rgba(239, 68, 68, 0.15);
       }
       .card-header-label {
-        font-size: 28px;
-        color: var(--text-sec);
-        font-weight: 700;
+        font-size: 38px;
+        color: #94a3b8;
+        font-weight: 900;
       }
       .stat-value {
-        font-size: 80px;
+        font-size: 110px;
         font-weight: 900;
-        letter-spacing: -0.02em;
-        margin: 12px 0;
+        letter-spacing: -0.025em;
+        margin: 8px 0;
+        line-height: 1;
       }
       .stat-cyan {
         color: var(--cyan);
-        text-shadow: 0 0 30px var(--cyan-glow);
+        text-shadow: 0 0 40px var(--cyan-glow);
       }
       .stat-red {
         color: var(--red);
-        text-shadow: 0 0 30px var(--red-glow);
+        text-shadow: 0 0 40px var(--red-glow);
       }
       .stat-note {
-        font-size: 28px;
-        padding: 10px 18px;
-        border-radius: 14px;
-        font-weight: 700;
+        font-size: 36px;
+        padding: 16px 24px;
+        border-radius: 18px;
+        font-weight: 900;
       }
       .note-cyan {
-        background: rgba(56, 189, 248, 0.16);
-        color: var(--cyan);
+        background: rgba(56, 189, 248, 0.22);
+        color: #38bdf8;
       }
       .note-red {
-        background: rgba(239, 68, 68, 0.16);
+        background: rgba(239, 68, 68, 0.22);
         color: #fca5a5;
       }
 
       .conflict-callout {
-        margin-top: 36px;
+        margin-top: 34px;
         width: 100%;
-        background: rgba(245, 158, 11, 0.12);
-        border: 1.5px solid rgba(245, 158, 11, 0.4);
-        border-radius: 24px;
-        padding: 30px;
+        background: rgba(245, 158, 11, 0.16);
+        border: 2.5px solid rgba(245, 158, 11, 0.55);
+        border-radius: 32px;
+        padding: 38px 40px;
         display: flex;
         align-items: center;
-        gap: 24px;
+        gap: 26px;
       }
       .conflict-icon {
-        font-size: 52px;
+        font-size: 68px;
+        flex-shrink: 0;
       }
       .conflict-text {
-        font-size: 28px;
-        font-weight: 700;
-        color: #fde68a;
+        font-size: 40px;
+        font-weight: 900;
+        color: #fef08a;
         line-height: 1.4;
       }
 
-      /* Scene 2 Elements */
+      /* Scene 2 Elements Maximized */
       .fcf-table {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 28px;
         width: 100%;
       }
       .fcf-row {
-        background: rgba(15, 23, 42, 0.88);
-        border: 1.5px solid rgba(255, 255, 255, 0.12);
-        border-radius: 24px;
-        padding: 30px 32px;
+        background: rgba(15, 23, 42, 0.94);
+        border: 2.5px solid rgba(255, 255, 255, 0.18);
+        border-radius: 32px;
+        padding: 42px 42px;
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
       .fcf-name {
-        font-size: 34px;
-        font-weight: 800;
+        font-size: 52px;
+        font-weight: 900;
       }
       .fcf-detail {
-        font-size: 28px;
-        color: var(--text-sec);
-        margin-top: 6px;
+        font-size: 38px;
+        font-weight: 700;
+        color: #cbd5e1;
+        margin-top: 8px;
       }
       .fcf-val-red {
-        font-size: 56px;
+        font-size: 84px;
         font-weight: 900;
         color: var(--red);
-        text-shadow: 0 0 25px var(--red-glow);
+        text-shadow: 0 0 40px var(--red-glow);
+        flex-shrink: 0;
       }
       .fcf-val-gold {
-        font-size: 56px;
+        font-size: 84px;
         font-weight: 900;
         color: var(--gold);
-        text-shadow: 0 0 25px var(--gold-glow);
+        text-shadow: 0 0 40px var(--gold-glow);
+        flex-shrink: 0;
       }
       .stamp-box {
         margin-top: 36px;
-        padding: 28px 48px;
-        border: 3.5px dashed var(--gold);
-        border-radius: 24px;
-        background: rgba(245, 158, 11, 0.14);
-        box-shadow: 0 0 45px rgba(245, 158, 11, 0.3);
+        padding: 42px 48px;
+        border: 5px dashed var(--gold);
+        border-radius: 32px;
+        background: rgba(245, 158, 11, 0.18);
+        box-shadow: 0 0 55px rgba(245, 158, 11, 0.4);
         transform: rotate(-2deg);
         text-align: center;
+        width: 100%;
       }
       .stamp-text {
-        font-size: 42px;
+        font-size: 56px;
         font-weight: 900;
         color: #fbbf24;
         letter-spacing: 0.05em;
+        line-height: 1.25;
       }
 
-      /* Scene 3 Elements */
+      /* Scene 3 Elements Maximized */
       .backtest-box {
         width: 100%;
-        background: rgba(16, 185, 129, 0.1);
-        border: 1.5px solid rgba(16, 185, 129, 0.4);
-        border-radius: 28px;
-        padding: 36px;
+        background: rgba(16, 185, 129, 0.14);
+        border: 2.5px solid rgba(16, 185, 129, 0.5);
+        border-radius: 36px;
+        padding: 42px 44px;
         margin-top: 30px;
       }
       .backtest-title {
-        font-size: 30px;
-        font-weight: 800;
+        font-size: 44px;
+        font-weight: 900;
         color: #6ee7b7;
-        margin-bottom: 22px;
+        margin-bottom: 26px;
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 16px;
       }
       .progress-bg {
         width: 100%;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
+        height: 52px;
+        background: rgba(255, 255, 255, 0.14);
+        border-radius: 26px;
         overflow: hidden;
         position: relative;
       }
@@ -314,83 +325,85 @@
         height: 100%;
         width: 0%;
         background: linear-gradient(90deg, #10b981, #34d399);
-        border-radius: 20px;
-        box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
+        border-radius: 26px;
+        box-shadow: 0 0 35px rgba(16, 185, 129, 0.65);
       }
       .backtest-stat-row {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin-top: 20px;
+        margin-top: 24px;
       }
       .backtest-label {
-        font-size: 28px;
-        color: var(--text-sec);
-        font-weight: 600;
+        font-size: 38px;
+        color: #cbd5e1;
+        font-weight: 800;
       }
       .backtest-big-num {
-        font-size: 68px;
+        font-size: 110px;
         font-weight: 900;
         color: #34d399;
-        text-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+        text-shadow: 0 0 45px rgba(16, 185, 129, 0.55);
+        line-height: 1;
       }
 
-      /* Scene 4 Elements */
+      /* Scene 4 Elements Maximized */
       .rule-cards {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 28px;
         width: 100%;
       }
       .rule-card {
-        background: rgba(15, 23, 42, 0.88);
-        border: 1.5px solid rgba(255, 255, 255, 0.14);
-        border-left: 10px solid var(--gold);
-        border-radius: 24px;
-        padding: 28px 32px;
-        display: flex;
-        align-items: center;
-        gap: 24px;
-      }
-      .rule-icon {
-        font-size: 52px;
-      }
-      .rule-body h4 {
-        font-size: 32px;
-        font-weight: 800;
-        color: #ffffff;
-        margin-bottom: 6px;
-      }
-      .rule-body p {
-        font-size: 28px;
-        color: var(--text-sec);
-        line-height: 1.4;
-      }
-
-      /* Rich Personal Brand Outro Card */
-      .rich-brand-card {
-        margin-top: 36px;
-        width: 100%;
-        background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
-        border: 1.5px solid rgba(245, 158, 11, 0.48);
-        border-radius: 28px;
-        padding: 32px;
+        background: rgba(15, 23, 42, 0.94);
+        border: 2.5px solid rgba(255, 255, 255, 0.18);
+        border-left: 14px solid var(--gold);
+        border-radius: 32px;
+        padding: 40px 42px;
         display: flex;
         align-items: center;
         gap: 28px;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(245, 158, 11, 0.2);
+      }
+      .rule-icon {
+        font-size: 72px;
+        flex-shrink: 0;
+      }
+      .rule-body h4 {
+        font-size: 46px;
+        font-weight: 900;
+        color: #ffffff;
+        margin-bottom: 8px;
+      }
+      .rule-body p {
+        font-size: 36px;
+        color: #cbd5e1;
+        line-height: 1.4;
+      }
+
+      /* Rich Personal Brand Outro Card Maximized */
+      .rich-brand-card {
+        margin-top: 36px;
+        width: 100%;
+        background: linear-gradient(135deg, rgba(30, 41, 59, 0.97), rgba(15, 23, 42, 0.97));
+        border: 2.5px solid rgba(245, 158, 11, 0.6);
+        border-radius: 36px;
+        padding: 42px 44px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.65), 0 0 45px rgba(245, 158, 11, 0.3);
       }
       .rich-avatar {
-        width: 108px;
-        height: 108px;
+        width: 136px;
+        height: 136px;
         border-radius: 50%;
         background: linear-gradient(135deg, #f59e0b, #d97706);
-        border: 3.5px solid #fef08a;
-        box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+        border: 4.5px solid #fef08a;
+        box-shadow: 0 0 40px rgba(245, 158, 11, 0.6);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 34px;
+        font-size: 48px;
         font-weight: 900;
         color: #0f172a;
         letter-spacing: 0.05em;
@@ -400,35 +413,37 @@
         flex: 1;
       }
       .rich-title {
-        font-size: 34px;
+        font-size: 48px;
         font-weight: 900;
         color: #ffffff;
       }
       .rich-sub {
-        font-size: 28px;
+        font-size: 36px;
+        font-weight: 700;
         color: #fde68a;
-        margin-top: 4px;
+        margin-top: 6px;
       }
       .follow-btn {
         background: linear-gradient(90deg, #f59e0b, #fbbf24);
         color: #0f172a;
-        font-size: 28px;
+        font-size: 36px;
         font-weight: 900;
-        padding: 14px 30px;
+        padding: 18px 42px;
         border-radius: 999px;
         display: flex;
         align-items: center;
         gap: 8px;
-        box-shadow: 0 0 25px rgba(245, 158, 11, 0.45);
+        box-shadow: 0 0 35px rgba(245, 158, 11, 0.55);
+        flex-shrink: 0;
       }
 
-      /* Global Synchronized Subtitle Bar */
+      /* Global Synchronized Subtitle Bar Maximized */
       #subtitle-bar {
         position: absolute;
-        bottom: 70px;
-        left: 48px;
-        right: 48px;
-        height: 170px;
+        bottom: 50px;
+        left: 28px;
+        right: 28px;
+        height: 200px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -437,33 +452,33 @@
         z-index: 100;
       }
       .subtitle-pill {
-        background: rgba(7, 10, 19, 0.92);
-        border: 1.5px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65);
-        border-radius: 24px;
-        padding: 20px 36px;
-        max-width: 960px;
-        font-size: 34px;
-        font-weight: 700;
-        line-height: 1.4;
+        background: rgba(7, 10, 19, 0.95);
+        border: 2.5px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 10px 55px rgba(0, 0, 0, 0.75);
+        border-radius: 32px;
+        padding: 26px 48px;
+        max-width: 1024px;
+        font-size: 46px;
+        font-weight: 900;
+        line-height: 1.45;
         color: #ffffff;
-        backdrop-filter: blur(16px);
+        backdrop-filter: blur(20px);
       }
       .sub-highlight {
         color: #38bdf8;
-        font-weight: 800;
+        font-weight: 900;
       }
       .sub-highlight-red {
         color: #f87171;
-        font-weight: 800;
+        font-weight: 900;
       }
       .sub-highlight-gold {
         color: #fbbf24;
-        font-weight: 800;
+        font-weight: 900;
       }
       .sub-highlight-green {
         color: #34d399;
-        font-weight: 800;
+        font-weight: 900;
       }
     </style>
   </head>
@@ -472,20 +487,20 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="63"
+      data-duration="79"
       data-width="1080"
       data-height="1920"
     >
       <!-- Background Audio (Rich Master Voiceover Track) -->
-      <audio id="rich-voiceover" src="audio/voiceover.mp3" data-start="0" data-duration="62"></audio>
+      <audio id="rich-voiceover" src="audio/voiceover.mp3" data-start="0" data-duration="77.51"></audio>
 
       <!-- Ambient Visuals with intentional off-canvas glow -->
       <div class="ambient-glow ambient-glow-1" data-layout-allow-overflow></div>
       <div class="ambient-glow ambient-glow-2" data-layout-allow-overflow></div>
       <div class="bg-grid"></div>
 
-      <!-- ================= SCENE 1 (0.0s - 11.5s) ================= -->
-      <section id="scene-1" class="clip" data-start="0" data-duration="11.5" data-hold>
+      <!-- ================= SCENE 1 (0.0s - 13.5s) ================= -->
+      <section id="scene-1" class="clip" data-start="0" data-duration="13.5" data-hold>
         <div id="s1-badge" class="badge-wrap">
           <div class="badge badge-cyan">
             <span>⚡ 全球財經深度觀察</span>
@@ -517,8 +532,8 @@
         </div>
       </section>
 
-      <!-- ================= SCENE 2 (11.5s - 27.5s) ================= -->
-      <section id="scene-2" class="clip" data-start="11.5" data-duration="16" data-hold>
+      <!-- ================= SCENE 2 (13.5s - 34.5s) ================= -->
+      <section id="scene-2" class="clip" data-start="13.5" data-duration="21.0" data-hold>
         <div id="s2-badge" class="badge-wrap">
           <div class="badge badge-red">
             <span>🔥 核心真相解密</span>
@@ -551,8 +566,8 @@
         </div>
       </section>
 
-      <!-- ================= SCENE 3 (27.5s - 45.5s) ================= -->
-      <section id="scene-3" class="clip" data-start="27.5" data-duration="18" data-hold>
+      <!-- ================= SCENE 3 (34.5s - 58.0s) ================= -->
+      <section id="scene-3" class="clip" data-start="34.5" data-duration="23.5" data-hold>
         <div id="s3-badge" class="badge-wrap">
           <div class="badge badge-emerald">
             <span>💎 長線贏家的機會</span>
@@ -571,8 +586,8 @@
 
           <div class="stat-card card-cyan">
             <div class="card-header-label">輝達 NVDA 預估 PE</div>
-            <div class="stat-value" style="color: #34d399; text-shadow: 0 0 30px var(--emerald-glow);">29x</div>
-            <div class="stat-note note-cyan" style="color: #6ee7b7; background: rgba(16, 185, 129, 0.16);">進入超跌價值區間</div>
+            <div class="stat-value" style="color: #34d399; text-shadow: 0 0 40px var(--emerald-glow);">29x</div>
+            <div class="stat-note note-cyan" style="color: #6ee7b7; background: rgba(16, 185, 129, 0.22);">進入超跌價值區間</div>
           </div>
         </div>
 
@@ -590,8 +605,8 @@
         </div>
       </section>
 
-      <!-- ================= SCENE 4 (45.5s - 63.0s) ================= -->
-      <section id="scene-4" class="clip" data-start="45.5" data-duration="17.5" data-hold>
+      <!-- ================= SCENE 4 (58.0s - 79.0s) ================= -->
+      <section id="scene-4" class="clip" data-start="58.0" data-duration="21.0" data-hold>
         <div id="s4-badge" class="badge-wrap">
           <div class="badge badge-gold">
             <span>🛡️ 頂尖投資實戰心法</span>
@@ -644,20 +659,20 @@
     <script>
       const tl = gsap.timeline({ paused: true });
 
-      // Subtitles data cues synced with audio
+      // Subtitles data cues synced with Rich's cloned voice
       const subtitles = [
-        { start: 0.3, text: "你看懂這週市場的<span class='sub-highlight'>矛盾訊號</span>了嗎？" },
-        { start: 3.5, text: "十年期美債殖利率跳水破 <span class='sub-highlight'>4.83%</span>，費半卻暴跌 <span class='sub-highlight-red'>20%</span> 墜入熊市！" },
-        { start: 8.8, text: "到底是在恐慌什麼？" },
-        { start: 11.8, text: "答案是：<span class='sub-highlight-gold'>自由現金流</span>的嚴酷考驗！" },
-        { start: 15.5, text: "亞馬遜第三季現金流重挫 <span class='sub-highlight-red'>423 億美元</span>，谷歌資本支出飆破 <span class='sub-highlight-gold'>1 兆</span>。" },
-        { start: 21.2, text: "市場不再買單無底洞本益比，沒有造血能力的假 AI 泡沫正被無情擠壓！" },
-        { start: 27.8, text: "但先別慌張！標普預估本益比已降到 <span class='sub-highlight'>18.8 倍</span>，輝達甚至來到超跌的 <span class='sub-highlight-green'>29 倍</span>。" },
-        { start: 34.5, text: "回顧美股 <span class='sub-highlight-gold'>44 年期中選舉歷史</span>，選舉日前進場，後一年平均大漲 <span class='sub-highlight-green'>11%</span>。" },
-        { start: 40.5, text: "當市場為短期雜音焦慮，就是長線贏家逢低撿鑽石的時刻！" },
-        { start: 45.8, text: "記住頂尖投資視角的兩大紀律：第一，<span class='sub-highlight-gold'>不融資、手握 5% 國庫券</span>築起護城河；" },
-        { start: 51.5, text: "第二，大膽佈局具備<span class='sub-highlight-green'>定價權與高自由現金流</span>的巨頭。市場越震盪，核心資產越珍貴。" },
-        { start: 57.5, text: "追蹤 <span class='sub-highlight-gold'>Rich</span>，每週帶你穿透市場迷霧！" }
+        { start: 0.4, text: "你看懂這週市場的<span class='sub-highlight'>矛盾訊號</span>了嗎？" },
+        { start: 4.2, text: "十年期美債殖利率跳水破 <span class='sub-highlight'>4.83%</span>，費半卻暴跌 <span class='sub-highlight-red'>20%</span> 墜入熊市！" },
+        { start: 10.2, text: "到底是在恐慌什麼？" },
+        { start: 13.8, text: "答案是：<span class='sub-highlight-gold'>自由現金流</span>的嚴酷考驗！" },
+        { start: 18.0, text: "亞馬遜第三季現金流重挫 <span class='sub-highlight-red'>423 億美元</span>，谷歌資本支出飆破 <span class='sub-highlight-gold'>1 兆</span>。" },
+        { start: 25.5, text: "市場不再買單無底洞本益比，沒有造血能力的假 AI 泡沫正被無情擠壓！" },
+        { start: 34.8, text: "但先別慌張！標普預估本益比已降到 <span class='sub-highlight'>18.8 倍</span>，輝達甚至來到超跌的 <span class='sub-highlight-green'>29 倍</span>。" },
+        { start: 42.5, text: "回顧美股 <span class='sub-highlight-gold'>44 年期中選舉歷史</span>，選舉日前進場，後一年平均大漲 <span class='sub-highlight-green'>11%</span>。" },
+        { start: 50.5, text: "當市場為短期雜音焦慮，就是長線贏家逢低撿鑽石的時刻！" },
+        { start: 58.2, text: "記住頂尖投資視角的兩大紀律：第一，<span class='sub-highlight-gold'>不融資、手握 5% 國庫券</span>築起護城河；" },
+        { start: 65.5, text: "第二，大膽佈局具備<span class='sub-highlight-green'>定價權與高自由現金流</span>的巨頭。市場越震盪，核心資產越珍貴。" },
+        { start: 72.8, text: "追蹤 <span class='sub-highlight-gold'>Rich</span>，每週帶你穿透市場迷霧！" }
       ];
 
       // Schedule subtitles change on timeline
@@ -668,7 +683,7 @@
         }, null, item.start);
       });
 
-      // ================= SCENE 1 ANIMATIONS (0 to 11.5s) =================
+      // ================= SCENE 1 ANIMATIONS (0 to 13.5s) =================
       tl.fromTo("#s1-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.2);
       tl.fromTo("#s1-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.4);
       tl.fromTo("#s1-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.6);
@@ -678,30 +693,30 @@
       // Micro subtle breathing on cards during scene 1
       tl.to("#s1-grid", { scale: 1.015, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: 1 }, 2.5);
 
-      // ================= SCENE 2 ANIMATIONS (11.5s to 27.5s) =================
-      tl.fromTo("#s2-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 11.6);
-      tl.fromTo("#s2-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 11.8);
-      tl.fromTo("#s2-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 12.0);
-      tl.fromTo("#s2-table", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 12.3);
-      tl.fromTo("#s2-stamp", { scale: 1.5, opacity: 0, rotate: 10 }, { scale: 1, opacity: 1, rotate: -2, duration: 0.6, ease: "bounce.out" }, 14.5);
-      tl.to("#s2-stamp", { scale: 1.04, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: 2 }, 16.0);
+      // ================= SCENE 2 ANIMATIONS (13.5s to 34.5s) =================
+      tl.fromTo("#s2-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 13.6);
+      tl.fromTo("#s2-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 13.8);
+      tl.fromTo("#s2-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 14.0);
+      tl.fromTo("#s2-table", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 14.3);
+      tl.fromTo("#s2-stamp", { scale: 1.5, opacity: 0, rotate: 10 }, { scale: 1, opacity: 1, rotate: -2, duration: 0.6, ease: "bounce.out" }, 16.5);
+      tl.to("#s2-stamp", { scale: 1.04, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: 2 }, 18.0);
 
-      // ================= SCENE 3 ANIMATIONS (27.5s to 45.5s) =================
-      tl.fromTo("#s3-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 27.6);
-      tl.fromTo("#s3-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 27.8);
-      tl.fromTo("#s3-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 28.0);
-      tl.fromTo("#s3-grid", { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.4)" }, 28.3);
-      tl.fromTo("#s3-backtest", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 29.0);
-      tl.fromTo("#s3-progress", { width: "0%" }, { width: "75%", duration: 1.8, ease: "power2.out" }, 29.5);
-      tl.to("#s3-backtest", { scale: 1.015, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: 2 }, 32.0);
+      // ================= SCENE 3 ANIMATIONS (34.5s to 58.0s) =================
+      tl.fromTo("#s3-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 34.6);
+      tl.fromTo("#s3-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 34.8);
+      tl.fromTo("#s3-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 35.0);
+      tl.fromTo("#s3-grid", { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.4)" }, 35.3);
+      tl.fromTo("#s3-backtest", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 36.0);
+      tl.fromTo("#s3-progress", { width: "0%" }, { width: "75%", duration: 1.8, ease: "power2.out" }, 36.5);
+      tl.to("#s3-backtest", { scale: 1.015, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: 2 }, 40.0);
 
-      // ================= SCENE 4 ANIMATIONS (45.5s to 63.0s) =================
-      tl.fromTo("#s4-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 45.6);
-      tl.fromTo("#s4-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 45.8);
-      tl.fromTo("#s4-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 46.0);
-      tl.fromTo("#s4-rules", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 46.4);
-      tl.fromTo("#s4-brand", { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.5)" }, 48.0);
-      tl.to("#s4-brand", { scale: 1.025, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: 2 }, 50.0);
+      // ================= SCENE 4 ANIMATIONS (58.0s to 79.0s) =================
+      tl.fromTo("#s4-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 58.1);
+      tl.fromTo("#s4-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 58.3);
+      tl.fromTo("#s4-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 58.5);
+      tl.fromTo("#s4-rules", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 59.0);
+      tl.fromTo("#s4-brand", { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.5)" }, 60.5);
+      tl.to("#s4-brand", { scale: 1.025, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: 2 }, 63.0);
 
       // Register Paused Timeline on window.__timelines
       window.__timelines["main"] = tl;

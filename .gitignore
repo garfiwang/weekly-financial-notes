@@ -7,3 +7,4 @@ credentials.*
 .DS_Store
 .hyperframes/
 node_modules/
+*.wav
