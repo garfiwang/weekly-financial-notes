@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="zh-TW" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>20261106 全球財經週報短影音 | Rich 觀點</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --bg: #070a13;
+        --card-bg: rgba(15, 23, 42, 0.88);
+        --card-border: rgba(255, 255, 255, 0.14);
+        --cyan: #38bdf8;
+        --cyan-glow: rgba(56, 189, 248, 0.35);
+        --red: #ef4444;
+        --red-glow: rgba(239, 68, 68, 0.35);
+        --gold: #f59e0b;
+        --gold-glow: rgba(245, 158, 11, 0.35);
+        --emerald: #10b981;
+        --emerald-glow: rgba(16, 185, 129, 0.35);
+        --text-pri: #ffffff;
+        --text-sec: #94a3b8;
+        --font-family: "Noto Sans TC", system-ui, sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--bg);
+        font-family: var(--font-family);
+        color: var(--text-pri);
+        -webkit-font-smoothing: antialiased;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 25%, #131d36 0%, #070a13 85%);
+      }
+
+      /* Ambient Light Glows */
+      .ambient-glow {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        filter: blur(140px);
+        pointer-events: none;
+        opacity: 0.25;
+      }
+      .ambient-glow-1 {
+        top: -100px;
+        left: -100px;
+        background: var(--cyan);
+      }
+      .ambient-glow-2 {
+        bottom: 200px;
+        right: -100px;
+        background: var(--gold);
+      }
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image: 
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+      }
+
+      /* Clips Container */
+      .clip {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 1920px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 190px 48px 290px 48px; /* Top 180px, Bottom 280px safe zones */
+      }
+
+      /* Badges & Headers */
+      .badge-wrap {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 24px;
+      }
+      .badge {
+        padding: 12px 32px;
+        border-radius: 999px;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .badge-cyan {
+        background: rgba(56, 189, 248, 0.16);
+        color: var(--cyan);
+        border: 1.5px solid rgba(56, 189, 248, 0.45);
+        box-shadow: 0 0 25px var(--cyan-glow);
+      }
+      .badge-red {
+        background: rgba(239, 68, 68, 0.16);
+        color: #f87171;
+        border: 1.5px solid rgba(239, 68, 68, 0.45);
+        box-shadow: 0 0 25px var(--red-glow);
+      }
+      .badge-gold {
+        background: rgba(245, 158, 11, 0.16);
+        color: #fbbf24;
+        border: 1.5px solid rgba(245, 158, 11, 0.45);
+        box-shadow: 0 0 25px var(--gold-glow);
+      }
+      .badge-emerald {
+        background: rgba(16, 185, 129, 0.16);
+        color: #34d399;
+        border: 1.5px solid rgba(16, 185, 129, 0.45);
+        box-shadow: 0 0 25px var(--emerald-glow);
+      }
+
+      .scene-title {
+        font-size: 60px;
+        font-weight: 900;
+        line-height: 1.25;
+        text-align: center;
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+      }
+      .scene-desc {
+        font-size: 30px;
+        color: var(--text-sec);
+        text-align: center;
+        margin-bottom: 40px;
+        line-height: 1.4;
+      }
+
+      /* Dual Stat Cards */
+      .dual-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .stat-card {
+        padding: 38px 26px;
+        border-radius: 28px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 420px;
+      }
+      .card-cyan {
+        background: rgba(15, 23, 42, 0.88);
+        border: 1.5px solid rgba(56, 189, 248, 0.38);
+        box-shadow: inset 0 0 30px rgba(56, 189, 248, 0.08);
+      }
+      .card-red {
+        background: rgba(15, 23, 42, 0.88);
+        border: 1.5px solid rgba(239, 68, 68, 0.38);
+        box-shadow: inset 0 0 30px rgba(239, 68, 68, 0.08);
+      }
+      .card-header-label {
+        font-size: 28px;
+        color: var(--text-sec);
+        font-weight: 700;
+      }
+      .stat-value {
+        font-size: 80px;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        margin: 12px 0;
+      }
+      .stat-cyan {
+        color: var(--cyan);
+        text-shadow: 0 0 30px var(--cyan-glow);
+      }
+      .stat-red {
+        color: var(--red);
+        text-shadow: 0 0 30px var(--red-glow);
+      }
+      .stat-note {
+        font-size: 28px;
+        padding: 10px 18px;
+        border-radius: 14px;
+        font-weight: 700;
+      }
+      .note-cyan {
+        background: rgba(56, 189, 248, 0.16);
+        color: var(--cyan);
+      }
+      .note-red {
+        background: rgba(239, 68, 68, 0.16);
+        color: #fca5a5;
+      }
+
+      .conflict-callout {
+        margin-top: 36px;
+        width: 100%;
+        background: rgba(245, 158, 11, 0.12);
+        border: 1.5px solid rgba(245, 158, 11, 0.4);
+        border-radius: 24px;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .conflict-icon {
+        font-size: 52px;
+      }
+      .conflict-text {
+        font-size: 28px;
+        font-weight: 700;
+        color: #fde68a;
+        line-height: 1.4;
+      }
+
+      /* Scene 2 Elements */
+      .fcf-table {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+      }
+      .fcf-row {
+        background: rgba(15, 23, 42, 0.88);
+        border: 1.5px solid rgba(255, 255, 255, 0.12);
+        border-radius: 24px;
+        padding: 30px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .fcf-name {
+        font-size: 34px;
+        font-weight: 800;
+      }
+      .fcf-detail {
+        font-size: 28px;
+        color: var(--text-sec);
+        margin-top: 6px;
+      }
+      .fcf-val-red {
+        font-size: 56px;
+        font-weight: 900;
+        color: var(--red);
+        text-shadow: 0 0 25px var(--red-glow);
+      }
+      .fcf-val-gold {
+        font-size: 56px;
+        font-weight: 900;
+        color: var(--gold);
+        text-shadow: 0 0 25px var(--gold-glow);
+      }
+      .stamp-box {
+        margin-top: 36px;
+        padding: 28px 48px;
+        border: 3.5px dashed var(--gold);
+        border-radius: 24px;
+        background: rgba(245, 158, 11, 0.14);
+        box-shadow: 0 0 45px rgba(245, 158, 11, 0.3);
+        transform: rotate(-2deg);
+        text-align: center;
+      }
+      .stamp-text {
+        font-size: 42px;
+        font-weight: 900;
+        color: #fbbf24;
+        letter-spacing: 0.05em;
+      }
+
+      /* Scene 3 Elements */
+      .backtest-box {
+        width: 100%;
+        background: rgba(16, 185, 129, 0.1);
+        border: 1.5px solid rgba(16, 185, 129, 0.4);
+        border-radius: 28px;
+        padding: 36px;
+        margin-top: 30px;
+      }
+      .backtest-title {
+        font-size: 30px;
+        font-weight: 800;
+        color: #6ee7b7;
+        margin-bottom: 22px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .progress-bg {
+        width: 100%;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+      }
+      .progress-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #10b981, #34d399);
+        border-radius: 20px;
+        box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
+      }
+      .backtest-stat-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: 20px;
+      }
+      .backtest-label {
+        font-size: 28px;
+        color: var(--text-sec);
+        font-weight: 600;
+      }
+      .backtest-big-num {
+        font-size: 68px;
+        font-weight: 900;
+        color: #34d399;
+        text-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+      }
+
+      /* Scene 4 Elements */
+      .rule-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+      }
+      .rule-card {
+        background: rgba(15, 23, 42, 0.88);
+        border: 1.5px solid rgba(255, 255, 255, 0.14);
+        border-left: 10px solid var(--gold);
+        border-radius: 24px;
+        padding: 28px 32px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .rule-icon {
+        font-size: 52px;
+      }
+      .rule-body h4 {
+        font-size: 32px;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 6px;
+      }
+      .rule-body p {
+        font-size: 28px;
+        color: var(--text-sec);
+        line-height: 1.4;
+      }
+
+      /* Rich Personal Brand Outro Card */
+      .rich-brand-card {
+        margin-top: 36px;
+        width: 100%;
+        background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+        border: 1.5px solid rgba(245, 158, 11, 0.48);
+        border-radius: 28px;
+        padding: 32px;
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(245, 158, 11, 0.2);
+      }
+      .rich-avatar {
+        width: 108px;
+        height: 108px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        border: 3.5px solid #fef08a;
+        box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 34px;
+        font-weight: 900;
+        color: #0f172a;
+        letter-spacing: 0.05em;
+        flex-shrink: 0;
+      }
+      .rich-info {
+        flex: 1;
+      }
+      .rich-title {
+        font-size: 34px;
+        font-weight: 900;
+        color: #ffffff;
+      }
+      .rich-sub {
+        font-size: 28px;
+        color: #fde68a;
+        margin-top: 4px;
+      }
+      .follow-btn {
+        background: linear-gradient(90deg, #f59e0b, #fbbf24);
+        color: #0f172a;
+        font-size: 28px;
+        font-weight: 900;
+        padding: 14px 30px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 0 25px rgba(245, 158, 11, 0.45);
+      }
+
+      /* Global Synchronized Subtitle Bar */
+      #subtitle-bar {
+        position: absolute;
+        bottom: 70px;
+        left: 48px;
+        right: 48px;
+        height: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        pointer-events: none;
+        z-index: 100;
+      }
+      .subtitle-pill {
+        background: rgba(7, 10, 19, 0.92);
+        border: 1.5px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65);
+        border-radius: 24px;
+        padding: 20px 36px;
+        max-width: 960px;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1.4;
+        color: #ffffff;
+        backdrop-filter: blur(16px);
+      }
+      .sub-highlight {
+        color: #38bdf8;
+        font-weight: 800;
+      }
+      .sub-highlight-red {
+        color: #f87171;
+        font-weight: 800;
+      }
+      .sub-highlight-gold {
+        color: #fbbf24;
+        font-weight: 800;
+      }
+      .sub-highlight-green {
+        color: #34d399;
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="63"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Background Audio (Rich Master Voiceover Track) -->
+      <audio id="rich-voiceover" src="audio/voiceover.mp3" data-start="0" data-duration="62"></audio>
+
+      <!-- Ambient Visuals with intentional off-canvas glow -->
+      <div class="ambient-glow ambient-glow-1" data-layout-allow-overflow></div>
+      <div class="ambient-glow ambient-glow-2" data-layout-allow-overflow></div>
+      <div class="bg-grid"></div>
+
+      <!-- ================= SCENE 1 (0.0s - 11.5s) ================= -->
+      <section id="scene-1" class="clip" data-start="0" data-duration="11.5" data-hold>
+        <div id="s1-badge" class="badge-wrap">
+          <div class="badge badge-cyan">
+            <span>⚡ 全球財經深度觀察</span>
+          </div>
+        </div>
+
+        <h1 id="s1-title" class="scene-title">美債跳水 vs 費半崩盤？</h1>
+        <p id="s1-desc" class="scene-desc">截然相反的市場訊號，背後到底在恐慌什麼？</p>
+
+        <div id="s1-grid" class="dual-grid" data-hold>
+          <!-- Card 1: US 10Y -->
+          <div class="stat-card card-cyan">
+            <div class="card-header-label">10年期美債殖利率</div>
+            <div class="stat-value stat-cyan"><span id="s1-c1-num">4.83</span>%</div>
+            <div class="stat-note note-cyan">大幅跳水 ▼ 避險狂湧</div>
+          </div>
+
+          <!-- Card 2: SOX Index -->
+          <div class="stat-card card-red">
+            <div class="card-header-label">費城半導體指數</div>
+            <div class="stat-value stat-red"><span id="s1-c2-num">-20</span>%</div>
+            <div class="stat-note note-red">墜入熊市 ▼ 跌破年線</div>
+          </div>
+        </div>
+
+        <div id="s1-callout" class="conflict-callout" data-hold>
+          <div class="conflict-icon">⚠️</div>
+          <div class="conflict-text">資金瘋狂搶進債券避險，卻在大砍半導體科技股！</div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 2 (11.5s - 27.5s) ================= -->
+      <section id="scene-2" class="clip" data-start="11.5" data-duration="16" data-hold>
+        <div id="s2-badge" class="badge-wrap">
+          <div class="badge badge-red">
+            <span>🔥 核心真相解密</span>
+          </div>
+        </div>
+
+        <h2 id="s2-title" class="scene-title">自由現金流的嚴酷考驗</h2>
+        <p id="s2-desc" class="scene-desc">市場不再買單「無底洞式」的高估值投資</p>
+
+        <div id="s2-table" class="fcf-table" data-hold>
+          <div class="fcf-row">
+            <div>
+              <div class="fcf-name">亞馬遜 Amazon</div>
+              <div class="fcf-detail">Q3 自由現金流 (FCF) 嚴重失血</div>
+            </div>
+            <div class="fcf-val-red">-$42.3B</div>
+          </div>
+
+          <div class="fcf-row">
+            <div>
+              <div class="fcf-name">谷歌 Alphabet</div>
+              <div class="fcf-detail">未來 AI 資本支出 (Capex) 預估</div>
+            </div>
+            <div class="fcf-val-gold">&gt; $1.076T</div>
+          </div>
+        </div>
+
+        <div id="s2-stamp" class="stamp-box" data-hold>
+          <div class="stamp-text">「自由現金流才是造血照妖鏡！」</div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 3 (27.5s - 45.5s) ================= -->
+      <section id="scene-3" class="clip" data-start="27.5" data-duration="18" data-hold>
+        <div id="s3-badge" class="badge-wrap">
+          <div class="badge badge-emerald">
+            <span>💎 長線贏家的機會</span>
+          </div>
+        </div>
+
+        <h2 id="s3-title" class="scene-title">別慌！歷史上的重大拐點</h2>
+        <p id="s3-desc" class="scene-desc">去泡沫後，核心龍頭浮現真實安全邊際</p>
+
+        <div id="s3-grid" class="dual-grid" data-hold>
+          <div class="stat-card card-cyan">
+            <div class="card-header-label">標普 500 預估 PE</div>
+            <div class="stat-value stat-cyan">18.8x</div>
+            <div class="stat-note note-cyan">降至十年合理中位值</div>
+          </div>
+
+          <div class="stat-card card-cyan">
+            <div class="card-header-label">輝達 NVDA 預估 PE</div>
+            <div class="stat-value" style="color: #34d399; text-shadow: 0 0 30px var(--emerald-glow);">29x</div>
+            <div class="stat-note note-cyan" style="color: #6ee7b7; background: rgba(16, 185, 129, 0.16);">進入超跌價值區間</div>
+          </div>
+        </div>
+
+        <div id="s3-backtest" class="backtest-box" data-hold>
+          <div class="backtest-title">
+            <span>📈 美股 44 年期中選舉歷史大數據</span>
+          </div>
+          <div class="progress-bg">
+            <div id="s3-progress" class="progress-fill"></div>
+          </div>
+          <div class="backtest-stat-row">
+            <span class="backtest-label">選舉日前進場，後 1 年平均漲幅：</span>
+            <span class="backtest-big-num">+<span id="s3-pct">11</span>%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 4 (45.5s - 63.0s) ================= -->
+      <section id="scene-4" class="clip" data-start="45.5" data-duration="17.5" data-hold>
+        <div id="s4-badge" class="badge-wrap">
+          <div class="badge badge-gold">
+            <span>🛡️ 頂尖投資實戰心法</span>
+          </div>
+        </div>
+
+        <h2 id="s4-title" class="scene-title">兩大紀律 穿透市場迷霧</h2>
+        <p id="s4-desc" class="scene-desc">市場越恐慌震盪，頂級核心資產越珍貴</p>
+
+        <div id="s4-rules" class="rule-cards" data-hold>
+          <div class="rule-card">
+            <div class="rule-icon">🛡️</div>
+            <div class="rule-body">
+              <h4>不開融資・手握 5% 國庫券</h4>
+              <p>無風險高息護城河，備妥充足子彈等待極端便宜價</p>
+            </div>
+          </div>
+
+          <div class="rule-card" style="border-left-color: #34d399;">
+            <div class="rule-icon">🎯</div>
+            <div class="rule-body">
+              <h4>佈局「高現金流＋定價權」巨頭</h4>
+              <p>無懼通膨與降息循環，坐享強大實質盈餘複合增長</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rich IP Card -->
+        <div id="s4-brand" class="rich-brand-card" data-hold>
+          <div class="rich-avatar">RICH</div>
+          <div class="rich-info">
+            <div class="rich-title">Rich 財經週報</div>
+            <div class="rich-sub">每週深度解讀・穿透全球市場迷霧</div>
+          </div>
+          <div class="follow-btn">
+            <span>＋ 追蹤</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dynamic Synchronized Subtitle Bar -->
+      <div id="subtitle-bar">
+        <div id="subtitle-content" class="subtitle-pill">
+          你看懂這週市場的矛盾訊號了嗎？
+        </div>
+      </div>
+    </div>
+
+    <!-- GSAP Seekable Timeline Script -->
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // Subtitles data cues synced with audio
+      const subtitles = [
+        { start: 0.3, text: "你看懂這週市場的<span class='sub-highlight'>矛盾訊號</span>了嗎？" },
+        { start: 3.5, text: "十年期美債殖利率跳水破 <span class='sub-highlight'>4.83%</span>，費半卻暴跌 <span class='sub-highlight-red'>20%</span> 墜入熊市！" },
+        { start: 8.8, text: "到底是在恐慌什麼？" },
+        { start: 11.8, text: "答案是：<span class='sub-highlight-gold'>自由現金流</span>的嚴酷考驗！" },
+        { start: 15.5, text: "亞馬遜第三季現金流重挫 <span class='sub-highlight-red'>423 億美元</span>，谷歌資本支出飆破 <span class='sub-highlight-gold'>1 兆</span>。" },
+        { start: 21.2, text: "市場不再買單無底洞本益比，沒有造血能力的假 AI 泡沫正被無情擠壓！" },
+        { start: 27.8, text: "但先別慌張！標普預估本益比已降到 <span class='sub-highlight'>18.8 倍</span>，輝達甚至來到超跌的 <span class='sub-highlight-green'>29 倍</span>。" },
+        { start: 34.5, text: "回顧美股 <span class='sub-highlight-gold'>44 年期中選舉歷史</span>，選舉日前進場，後一年平均大漲 <span class='sub-highlight-green'>11%</span>。" },
+        { start: 40.5, text: "當市場為短期雜音焦慮，就是長線贏家逢低撿鑽石的時刻！" },
+        { start: 45.8, text: "記住頂尖投資視角的兩大紀律：第一，<span class='sub-highlight-gold'>不融資、手握 5% 國庫券</span>築起護城河；" },
+        { start: 51.5, text: "第二，大膽佈局具備<span class='sub-highlight-green'>定價權與高自由現金流</span>的巨頭。市場越震盪，核心資產越珍貴。" },
+        { start: 57.5, text: "追蹤 <span class='sub-highlight-gold'>Rich</span>，每週帶你穿透市場迷霧！" }
+      ];
+
+      // Schedule subtitles change on timeline
+      const subEl = document.getElementById("subtitle-content");
+      subtitles.forEach((item) => {
+        tl.call(() => {
+          if (subEl) subEl.innerHTML = item.text;
+        }, null, item.start);
+      });
+
+      // ================= SCENE 1 ANIMATIONS (0 to 11.5s) =================
+      tl.fromTo("#s1-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.2);
+      tl.fromTo("#s1-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.4);
+      tl.fromTo("#s1-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.6);
+      tl.fromTo("#s1-grid", { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.4)" }, 0.8);
+      tl.fromTo("#s1-callout", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 1.3);
+
+      // Micro subtle breathing on cards during scene 1
+      tl.to("#s1-grid", { scale: 1.015, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: 1 }, 2.5);
+
+      // ================= SCENE 2 ANIMATIONS (11.5s to 27.5s) =================
+      tl.fromTo("#s2-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 11.6);
+      tl.fromTo("#s2-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 11.8);
+      tl.fromTo("#s2-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 12.0);
+      tl.fromTo("#s2-table", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 12.3);
+      tl.fromTo("#s2-stamp", { scale: 1.5, opacity: 0, rotate: 10 }, { scale: 1, opacity: 1, rotate: -2, duration: 0.6, ease: "bounce.out" }, 14.5);
+      tl.to("#s2-stamp", { scale: 1.04, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: 2 }, 16.0);
+
+      // ================= SCENE 3 ANIMATIONS (27.5s to 45.5s) =================
+      tl.fromTo("#s3-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 27.6);
+      tl.fromTo("#s3-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 27.8);
+      tl.fromTo("#s3-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 28.0);
+      tl.fromTo("#s3-grid", { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.4)" }, 28.3);
+      tl.fromTo("#s3-backtest", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 29.0);
+      tl.fromTo("#s3-progress", { width: "0%" }, { width: "75%", duration: 1.8, ease: "power2.out" }, 29.5);
+      tl.to("#s3-backtest", { scale: 1.015, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: 2 }, 32.0);
+
+      // ================= SCENE 4 ANIMATIONS (45.5s to 63.0s) =================
+      tl.fromTo("#s4-badge", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 45.6);
+      tl.fromTo("#s4-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 45.8);
+      tl.fromTo("#s4-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 46.0);
+      tl.fromTo("#s4-rules", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 46.4);
+      tl.fromTo("#s4-brand", { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.5)" }, 48.0);
+      tl.to("#s4-brand", { scale: 1.025, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: 2 }, 50.0);
+
+      // Register Paused Timeline on window.__timelines
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

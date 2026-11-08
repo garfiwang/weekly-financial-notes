@@ -5,3 +5,5 @@ desktop.ini
 *.key
 credentials.*
 .DS_Store
+.hyperframes/
+node_modules/
