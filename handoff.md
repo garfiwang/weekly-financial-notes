@@ -1,6 +1,14 @@
 # 專案交接紀錄（handoff.md）
 
 ## ⏯️ 目前做到哪
+- [x] **完成每週財經週報學習與價值投資知識庫定期研讀更新任務 (2026-11-09 17:05)**：
+  - **週報掃描與進度比對**：全面掃描專案內 8 份財經週報（自 2026.08 至 2026.11.06 最新出刊），精準比對與對齊最新週報 `20261106 全球財經週報.md` 之宏觀轉折與微觀數據。
+  - **全景宏觀週期演變圖譜擴充（Mermaid 四階段架構）**：正式將週期圖譜升級為 4 大階段，加入「階段四：政治洗牌、避險回跌與好球區成形（11月上旬~當前）」，涵蓋期中選舉分裂國會制衡赤字、10 年期美債自 5.3% 避險回落至 4.83%~4.85%、標普 PE 18.8x、NVDA 29x、Alphabet 14x、以及 Palantir 商用年增 148% 確立軟體落地典範。
+  - **精萃最新週報關鍵數據與價值投資指引**：
+    - **宏觀與微觀關鍵數據**：完整納入 10 年期美債殖利率回測 4.83%~4.85%（Flight to Safety）、布蘭特原油跌破 $95、聯準會利率 3.75%~4.00%（Higher for Longer）、Alphabet 資本承諾 1.076 兆美元與 PE 壓縮至 14x、亞馬遜 FCF -$42.3B、Palantir 商用營收 9.84 億美元 (+148%) / NDR 165%、Token 推論成本降 54% 至 $0.95/M、全美電網 43GW 電力缺口、期中選舉 44 年歷史勝率（選後 3 個月美股平均大漲 11%）、台灣 8.46 兆超額儲蓄游資護城河與 GDP 上修 11.48%。
+    - **頂尖價值投資決策指引**：深化實質盈餘（Owner Earnings）、定價權與安全邊際原則，確保持續落實 60% 核心防守（5% T-Bills 孳息與高現金流巨頭）＋ 40% 衛星進攻（半導體算力龍頭與落地軟體）之非對稱賠率配置。
+  - **嚴格落實對外合規清查**：全篇知識庫正文、總結與動態追加區，全面排查並杜絕「波克夏心法」字眼，統一採用客觀中立之「頂尖價值投資視角」、「安全邊際原則」與「資本配置策略」，徹底杜絕商標與侵權風險。
+  - **同步優化雲端工作流與自動化腳本**：更新 `scripts/auto_learn_weekly_reports.py` 與 `.github/workflows/weekly-financial-learning.yml`，確保後續雲端排程無縫且合規運行。
 - [x] **完成「財經週報短影音」最終頂規升級（真實 Rich 聲音克隆 ＋ 全畫面字體極大化版）**：
   - **聲音模型**：完全使用本地端使用者專屬的 **「Rich的聲音」克隆聲音模型**（VoxCPM2 核心架構於 Apple Silicon MPS GPU 運算生成，配對 `ref_voice.wav` 專屬音色與自然咬字），並經 `atempo=1.15` 專業廣播級節奏調校，完美呈現權威、沉穩且具感染力的專業解說音質。
   - **全畫面字卡極大化**：全篇排版寬度向外擴展至 **1024px 極限**，字體全面放大至畫面最大限度：
@@ -25,17 +33,18 @@
 - [x] **完成「三大關注標的壓力測試」深度診斷報告**（US10Y、0050、2330）。
 
 ## 🚦 目前狀態
+- ✅ **知識庫更新完成**：[`財經週報學習總綱與波克夏投資決策知識庫.md`](file:///Users/garfiwang/Library/CloudStorage/GoogleDrive-richnews168@gmail.com/我的雲端硬碟/【筆記】每週財經資訊/財經週報學習總綱與波克夏投資決策知識庫.md) 完整納入 8 份週報 macro-micro 數據與頂尖價值投資決策架構，合規清查 100% 通過。
 - ✅ **短影音檔案完成**：[`shorts-20261106/20261106_rich_financial_shorts.mp4`](file:///Users/garfiwang/Library/CloudStorage/GoogleDrive-richnews168@gmail.com/我的雲端硬碟/【筆記】每週財經資訊/shorts-20261106/20261106_rich_financial_shorts.mp4)（12.6 MB，79.0 秒，1080x1920，Rich 真實克隆聲音配音）。
 - ✅ **網頁簡報公開上線**：[https://garfiwang.github.io/weekly-financial-notes/](https://garfiwang.github.io/weekly-financial-notes/)。
 - ✅ **最新 Google 文件線上就緒**：[20261106 - 全球財經週報](https://docs.google.com/document/d/1sHyzbL-tTC3CGkltvjO5bMxOcRenSyhFhrB0C0wdkT4)。
 - ✅ **四層級備份完整**：所有檔案均與 GDrive、GitHub、Obsidian 及 Pages 保持一致。
 
 ## ➡️ 下一步建議
-1. 可直接播放或於 Finder 預覽剛剛完成的極大字版短影音 `20261106_rich_financial_shorts.mp4`。
+1. 可直接播放或於 Finder 預覽極大字版短影音 `20261106_rich_financial_shorts.mp4`。
 2. 隨時可直接發布至 YouTube Shorts、Instagram Reels、TikTok、LINE 官方帳號等社群平台。
-3. 下週一 05:00 GitHub Actions 將自動觸發全球財經新聞深度爬蟲與週報生成工作流。
+3. 下週一 05:00 GitHub Actions 將自動觸發全球財經新聞深度爬蟲與週報生成工作流，17:00 自動研讀任務接續執行。
 
 ## 🕐 最後更新
-- **時間**：2026-11-08 23:25
+- **時間**：2026-11-09 17:05
 - **更新者**：Antigravity @ Mac (首席投資策略師)
-- **Git Push 狀態**：`✅ 已推 (dd54453)`
+- **Git Push 狀態**：`待推 (Pending commit/push)`

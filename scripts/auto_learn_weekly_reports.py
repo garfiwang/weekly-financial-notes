@@ -77,18 +77,26 @@ def update_knowledge_base(kb_path, latest_report, all_reports):
     print(f"[INFO] 偵測到最新週報尚未收錄：{latest_date} - {latest_title}")
     taipei_time_str = get_taipei_now().strftime("%Y-%m-%d %H:%M")
 
-    # 更新建立/更新時間
-    kb_text = re.sub(
-        r"> \*\*建立時間\*\*：.*",
-        f"> **建立時間**：2026-11-06  \n> **最新雲端更新**：{taipei_time_str} (GitHub Actions 雲端自動同步)",
-        kb_text,
-        count=1
-    )
+    # 更新最新更新時間（避免重複累積時間戳）
+    if "> **最新" in kb_text:
+        kb_text = re.sub(
+            r"> \*\*最新.*?\n",
+            f"> **最新雲端更新**：{taipei_time_str} (GitHub Actions 雲端自動同步)\n",
+            kb_text,
+            count=1
+        )
+    else:
+        kb_text = re.sub(
+            r"(> \*\*建立時間\*\*：.*?\n)",
+            r"\1> **最新雲端更新**：" + taipei_time_str + " (GitHub Actions 雲端自動同步)\n",
+            kb_text,
+            count=1
+        )
 
-    # 在壹、全景宏觀週期演變圖譜中追加節點備註
+    # 在肆、當前節點前追加節點備註
     update_note = f"\n\n### 📌 最新週期動態追加（{latest_date}）：{latest_title}\n"
-    update_note += f"- **核心宏觀摘要**：{latest_summary[:300]}...\n"
-    update_note += f"- **價值投資觀點檢驗**：在 {latest_date} 的市場震盪中，持續檢視實質盈餘（Owner Earnings）與安全邊際（Margin of Safety），嚴格落實非對稱賠率配置。\n"
+    update_note += f"- **核心宏觀摘要**：{latest_summary}\n"
+    update_note += f"- **頂尖價值投資視角檢驗**：在 {latest_date} 的市場震盪中，持續檢視實質盈餘（Owner Earnings）與安全邊際（Margin of Safety），嚴格落實非對稱賠率配置。\n"
 
     # 在肆、當前節點前插入
     insert_pos = kb_text.find("## 肆、")
