@@ -8,3 +8,5 @@ credentials.*
 .hyperframes/
 node_modules/
 *.wav
+__pycache__/
+*.pyc

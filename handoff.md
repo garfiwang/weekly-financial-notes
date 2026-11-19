@@ -1,50 +1,33 @@
 # 專案交接紀錄（handoff.md）
 
 ## ⏯️ 目前做到哪
-- [x] **完成每週財經週報學習與價值投資知識庫定期研讀更新任務 (2026-11-09 17:05)**：
-  - **週報掃描與進度比對**：全面掃描專案內 8 份財經週報（自 2026.08 至 2026.11.06 最新出刊），精準比對與對齊最新週報 `20261106 全球財經週報.md` 之宏觀轉折與微觀數據。
-  - **全景宏觀週期演變圖譜擴充（Mermaid 四階段架構）**：正式將週期圖譜升級為 4 大階段，加入「階段四：政治洗牌、避險回跌與好球區成形（11月上旬~當前）」，涵蓋期中選舉分裂國會制衡赤字、10 年期美債自 5.3% 避險回落至 4.83%~4.85%、標普 PE 18.8x、NVDA 29x、Alphabet 14x、以及 Palantir 商用年增 148% 確立軟體落地典範。
-  - **精萃最新週報關鍵數據與價值投資指引**：
-    - **宏觀與微觀關鍵數據**：完整納入 10 年期美債殖利率回測 4.83%~4.85%（Flight to Safety）、布蘭特原油跌破 $95、聯準會利率 3.75%~4.00%（Higher for Longer）、Alphabet 資本承諾 1.076 兆美元與 PE 壓縮至 14x、亞馬遜 FCF -$42.3B、Palantir 商用營收 9.84 億美元 (+148%) / NDR 165%、Token 推論成本降 54% 至 $0.95/M、全美電網 43GW 電力缺口、期中選舉 44 年歷史勝率（選後 3 個月美股平均大漲 11%）、台灣 8.46 兆超額儲蓄游資護城河與 GDP 上修 11.48%。
-    - **頂尖價值投資決策指引**：深化實質盈餘（Owner Earnings）、定價權與安全邊際原則，確保持續落實 60% 核心防守（5% T-Bills 孳息與高現金流巨頭）＋ 40% 衛星進攻（半導體算力龍頭與落地軟體）之非對稱賠率配置。
-  - **嚴格落實對外合規清查**：全篇知識庫正文、總結與動態追加區，全面排查並杜絕「波克夏心法」字眼，統一採用客觀中立之「頂尖價值投資視角」、「安全邊際原則」與「資本配置策略」，徹底杜絕商標與侵權風險。
-  - **同步優化雲端工作流與自動化腳本**：更新 `scripts/auto_learn_weekly_reports.py` 與 `.github/workflows/weekly-financial-learning.yml`，確保後續雲端排程無縫且合規運行。
-- [x] **完成「財經週報短影音」最終頂規升級（真實 Rich 聲音克隆 ＋ 全畫面字體極大化版）**：
-  - **聲音模型**：完全使用本地端使用者專屬的 **「Rich的聲音」克隆聲音模型**（VoxCPM2 核心架構於 Apple Silicon MPS GPU 運算生成，配對 `ref_voice.wav` 專屬音色與自然咬字），並經 `atempo=1.15` 專業廣播級節奏調校，完美呈現權威、沉穩且具感染力的專業解說音質。
-  - **全畫面字卡極大化**：全篇排版寬度向外擴展至 **1024px 極限**，字體全面放大至畫面最大限度：
-    - 主標題由 60px 升級至 **84px 震撼大字**。
-    - 核心數值（4.83%、-20%、18.8x、29x、+11%）全數升級至 **110px～120px 霓虹立體巨型數字**。
-    - 關鍵數據（-$42.3B、> $1.076T）放大至 **84px**。
-    - 底部動態同步字幕提升至 **46px 高對比黑金膠囊條**。
-  - **影音規格**：標準 9:16 直式短影音（1080x1920，30fps，H.264 / 48kHz 立體聲 AAC），時長精確為 **79.0 秒**，檔案大小 **12.6 MB**，專為 YouTube Shorts、Instagram Reels、TikTok 打造。
-  - **四大分鏡大字版設計**：
-    1. **Scene 1 (0.0s - 13.5s)**：極限矛盾對決（十年期美債 4.83% vs 費半 -20% 熊市雙巨卡）。
-    2. **Scene 2 (13.5s - 34.5s)**：現金流造血大考驗（亞馬遜失血 -$42.3B vs Alphabet 資本支出破 $1.076T 巨卡）＋ 56px 金色「自由現金流才是造血照妖鏡」衝擊印章。
-    3. **Scene 3 (34.5s - 58.0s)**：歷史拐點與估值修復（標普 PE 18.8x、輝達 29x 雙巨數值）＋期中選舉 44 年歷史大數據動態進度條（+11% 巨字）。
-    4. **Scene 4 (58.0s - 79.0s)**：頂尖投資實戰紀律卡片（5% 國庫券護城河＋高定價權巨頭，46px 粗體標題）＋ Rich 專屬品牌金徽與追蹤引導。
-  - **雙層安全防護與自動化稽核**：
-    - 嚴格落實對外合規防護，**全片零出現「波克夏心法」字眼**，徹底杜絕法律與商標爭議。
-    - 通過 `hyperframes check` 全項自動化稽核（0 Lint errors, 0 Runtime errors, 0 Motion errors, 0 Craft errors, 70/70 WCAG AA 文字對比度完全合格）。
-  - **Obsidian 雙向備份**：已將最新影片、音檔與原始碼完整同步至 Obsidian 第二大腦知識庫（`/Users/garfiwang/Documents/Obsidian/【筆記】每週財經資訊/shorts-20261106/`）。
-- [x] **落實對外合規與商標防護規範（全面禁用「波克夏心法」）**：
-  - 現有及未來對外週報、Google 文件、公開網頁簡報中，一律嚴禁出現「波克夏心法」等專有名詞，統一替換為客觀中立之通用專業投資術語：「頂尖價值投資視角」、「安全邊際原則」、「實質盈餘與定價權分析」、「長線資本配置策略」。
-- [x] **完成本週網頁簡報製作與自動部署（L4 Pages）**：
-  - 7 頁 Swiper.js 手機優先大字版互動簡報（`index.html`），已部署至 GitHub Pages。
-- [x] **完成「三大關注標的壓力測試」深度診斷報告**（US10Y、0050、2330）。
+- [x] **完成「每週全球財經週報生成與派送」GitHub Actions 雲端不斷電升級 (2026-11-19 09:20)**：
+  - **建立雲端工作流**：`.github/workflows/weekly-global-financial-report.yml`，排程每週一早上 05:00 台北時間（週日 21:00 UTC）自動在 GitHub 雲端虛擬機執行。
+  - **配置完整雲端 Secrets**：已透過 GitHub CLI 設定 `CLASPRC_JSON`（Google Drive API OAuth 憑證）與 `GEMINI_API_KEY`，達成 Mac 完全關機拔插頭時，雲端仍能 100% 無人值守生成週報並上傳 Google Drive。
+  - **建立強化版腳本**：`scripts/generate_and_export_weekly_report.py`，支援自動抓取外媒 RSS、標準排版轉換 HTML、Drive Multipart 原生文件建立、本地 `.gdoc` 捷徑生成與郵件發送。
+- [x] **補做完成本週最新《20261119 全球財經週報》**：
+  - **主題**：《20261119 全球財經週報：輝達震盪換帥引爆算力重估、CPI升溫促聯準會重啟升息，美債破5.14%下的流動性與安全邊際考驗》。
+  - **五大規範落實**：四級階梯（H1~H4）、內文首行縮排 2 字元、關鍵重要數據紅字粗體（`#c00000`）、正文字級 ≥ 12pt、對外報告全面去除「波克夏心法」專有名詞。
+  - **Google 原生文件建立**：成功建立並匯出至 Google Drive 父目錄，線上文件連結：[20261119 - 全球財經週報](https://docs.google.com/document/d/1DXs3QPLolBl_xxuKv2TUidoiLDA5x3I7I32g9_O29p0)（文件 ID: `1DXs3QPLolBl_xxuKv2TUidoiLDA5x3I7I32g9_O29p0`）。
+  - **郵件派送實測**：透過 Apple Mail 成功將最新週報與線上 Google 文件連結寄出至 `richnews168@gmail.com`。
+- [x] **完成訪談精華深度研讀與價值投資決策知識庫更新**：
+  - 研讀台經院景氣預測中心孫明德主任最新特輯《AI 撐起台灣經濟，2027 還能繼續嗎？》，萃取 GDP 12.3%、產業界線重塑、「重硬偏軟」算力邊際成本陷阱、聯準會生生不息升息與 40 兆美債搶錢等觀點，增補進 [財經週報學習總綱與波克夏投資決策知識庫.md](file:///Users/garfiwang/Library/CloudStorage/GoogleDrive-richnews168@gmail.com/我的雲端硬碟/【筆記】每週財經資訊/財經週報學習總綱與波克夏投資決策知識庫.md)。
+- [x] **四層級全面同步**：本地 GDrive (L1)、GitHub (L2)、Obsidian 第二大腦 (L3) 保持 100% 同步。
 
 ## 🚦 目前狀態
-- ✅ **知識庫更新完成**：[`財經週報學習總綱與波克夏投資決策知識庫.md`](file:///Users/garfiwang/Library/CloudStorage/GoogleDrive-richnews168@gmail.com/我的雲端硬碟/【筆記】每週財經資訊/財經週報學習總綱與波克夏投資決策知識庫.md) 完整納入 8 份週報 macro-micro 數據與頂尖價值投資決策架構，合規清查 100% 通過。
-- ✅ **短影音檔案完成**：[`shorts-20261106/20261106_rich_financial_shorts.mp4`](file:///Users/garfiwang/Library/CloudStorage/GoogleDrive-richnews168@gmail.com/我的雲端硬碟/【筆記】每週財經資訊/shorts-20261106/20261106_rich_financial_shorts.mp4)（12.6 MB，79.0 秒，1080x1920，Rich 真實克隆聲音配音）。
-- ✅ **網頁簡報公開上線**：[https://garfiwang.github.io/weekly-financial-notes/](https://garfiwang.github.io/weekly-financial-notes/)。
-- ✅ **最新 Google 文件線上就緒**：[20261106 - 全球財經週報](https://docs.google.com/document/d/1sHyzbL-tTC3CGkltvjO5bMxOcRenSyhFhrB0C0wdkT4)。
-- ✅ **四層級備份完整**：所有檔案均與 GDrive、GitHub、Obsidian 及 Pages 保持一致。
+- ✅ **雲端不斷電雙排程就緒**：
+  1. 每週一 05:00：`.github/workflows/weekly-global-financial-report.yml`（外媒研析 → 繁中週報產出 → 匯出 GDoc）。
+  2. 每週一 17:00：`.github/workflows/weekly-financial-learning.yml`（自動研讀最新週報 → 增補知識庫 → Git Push）。
+- ✅ **最新 Google 文件線上就緒**：[20261119 - 全球財經週報](https://docs.google.com/document/d/1DXs3QPLolBl_xxuKv2TUidoiLDA5x3I7I32g9_O29p0)。
+- ✅ **郵件派送成功**：Apple Mail 已成功向 `richnews168@gmail.com` 發送最新出刊通知。
+- ✅ **知識庫更新完成**：已納入全專案 9 份週報與權威機構特輯訪談。
 
 ## ➡️ 下一步建議
-1. 可直接播放或於 Finder 預覽極大字版短影音 `20261106_rich_financial_shorts.mp4`。
-2. 隨時可直接發布至 YouTube Shorts、Instagram Reels、TikTok、LINE 官方帳號等社群平台。
-3. 下週一 05:00 GitHub Actions 將自動觸發全球財經新聞深度爬蟲與週報生成工作流，17:00 自動研讀任務接續執行。
+1. 可點選線上 Google 文件 [20261119 - 全球財經週報](https://docs.google.com/document/d/1DXs3QPLolBl_xxuKv2TUidoiLDA5x3I7I32g9_O29p0) 查閱本週外媒與總經焦點。
+2. 若需要將本週最新週報轉換為網頁簡報，可隨時觸發 **「製作這週的財經簡報」** 自動生成 7 頁 Swiper.js 手機大字版簡報並發布至 GitHub Pages。
+3. 隨時可針對任一個股（如台積電、輝達、聯發科）提出「進行壓力測試」獲取最新安全邊際診斷。
 
 ## 🕐 最後更新
-- **時間**：2026-11-09 17:05
+- **時間**：2026-11-19 09:21
 - **更新者**：Antigravity @ Mac (首席投資策略師)
-- **Git Push 狀態**：`✅ 已推 (d178f3f)`
+- **Git Push 狀態**：`⏳ 待推`

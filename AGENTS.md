@@ -24,15 +24,18 @@
 │           └── SKILL.md
 ├── .github/
 │   └── workflows/
-│       └── weekly-financial-learning.yml
+│       ├── weekly-financial-learning.yml
+│       └── weekly-global-financial-report.yml
 ├── scripts/
 │   ├── auto_learn_weekly_reports.py
-│   └── export_and_mail_weekly_report.py
+│   ├── export_and_mail_weekly_report.py
+│   └── generate_and_export_weekly_report.py
 ├── AGENTS.md
 ├── handoff.md
 ├── index.html
 ├── .gitignore
 ├── 財經週報學習總綱與波克夏投資決策知識庫.md
+├── 【MM Podcast】孫主任訪談精華筆記_觀點整理版.pdf
 ├── 20260824-0828 | 美債殖利率飆升深度分析.gdoc
 ├── 20260831-0904 全球宏觀經濟與 AI 產業大變局深度解讀.md
 ├── 20260831-0904 | 美聯準會政策變革與「財政部放水」的強烈衝突.gdoc
@@ -51,6 +54,8 @@
 ├── 20261102-1103 | 費半崩入熊市、蘋果Ａ轉！AI 生產力革命是真是假？美股跌出買點了嗎？.gdoc
 ├── 20261106 全球財經週報.md
 ├── 20261106 - 全球財經週報.gdoc
+├── 20261119 全球財經週報.md
+├── 20261119 - 全球財經週報.gdoc
 └── shorts-20261106/
     ├── index.html
     ├── 20261106_rich_financial_shorts.mp4
